@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.AyudaDTO;
 import upc.edu.pe.gosecurity.entities.Ayuda;
-import upc.edu.pe.gosecurity.serviceinterfaces.IAyudaService;
+import upc.edu.pe.gosecurity.servicesInterfaces.IAyudaService;
 
 import java.util.List;
 import java.util.stream.Collectors;

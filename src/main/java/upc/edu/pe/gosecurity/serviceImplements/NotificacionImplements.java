@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import upc.edu.pe.gosecurity.entities.Notificacion;
 import upc.edu.pe.gosecurity.repositories.NotificacionRepository;
-import upc.edu.pe.gosecurity.serviceinterfaces.INotificacionService;
+import upc.edu.pe.gosecurity.servicesInterfaces.INotificacionService;
 
 import java.util.List;
 

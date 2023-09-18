@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.TipoCasoDTO;
 import upc.edu.pe.gosecurity.entities.TipoCaso;
-import upc.edu.pe.gosecurity.serviceinterfaces.ITipoCasoService;
+import upc.edu.pe.gosecurity.servicesInterfaces.ITipoCasoService;
 
 import java.util.List;
 import java.util.stream.Collectors;

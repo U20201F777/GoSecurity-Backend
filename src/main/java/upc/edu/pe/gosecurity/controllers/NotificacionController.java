@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.NotificacionDTO;
 import upc.edu.pe.gosecurity.entities.Notificacion;
-import upc.edu.pe.gosecurity.serviceinterfaces.INotificacionService;
+import upc.edu.pe.gosecurity.servicesInterfaces.INotificacionService;
 
 import java.util.List;
 import java.util.stream.Collectors;
