@@ -17,6 +17,7 @@ public class PertenenciaDTO {
     private PertenenciasModelo pertenenciasModelo;
     private PertenenciasTipo pertenenciasTipo;
     private Ciudadano idCiudadano;
+    private UbicacionP idUbicacionP;
 
     public int getIdPertenencias() {
         return idPertenencias;
@@ -112,5 +113,13 @@ public class PertenenciaDTO {
 
     public void setIdCiudadano(Ciudadano idCiudadano) {
         this.idCiudadano = idCiudadano;
+    }
+
+    public UbicacionP getIdUbicacionP() {
+        return idUbicacionP;
+    }
+
+    public void setIdUbicacionP(UbicacionP idUbicacionP) {
+        this.idUbicacionP = idUbicacionP;
     }
 }
