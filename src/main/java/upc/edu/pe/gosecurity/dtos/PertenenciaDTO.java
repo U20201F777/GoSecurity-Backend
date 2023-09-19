@@ -1,9 +1,6 @@
 package upc.edu.pe.gosecurity.dtos;
 
-import upc.edu.pe.gosecurity.entities.PertenenciasColor;
-import upc.edu.pe.gosecurity.entities.PertenenciasMarca;
-import upc.edu.pe.gosecurity.entities.PertenenciasModelo;
-import upc.edu.pe.gosecurity.entities.PertenenciasTipo;
+import upc.edu.pe.gosecurity.entities.*;
 
 import java.time.LocalDate;
 
@@ -19,7 +16,7 @@ public class PertenenciaDTO {
     private PertenenciasMarca pertenenciasMarca;
     private PertenenciasModelo pertenenciasModelo;
     private PertenenciasTipo pertenenciasTipo;
-
+    private Ciudadano idCiudadano;
 
     public int getIdPertenencias() {
         return idPertenencias;
@@ -108,5 +105,12 @@ public class PertenenciaDTO {
     public void setPertenenciasTipo(PertenenciasTipo pertenenciasTipo) {
         this.pertenenciasTipo = pertenenciasTipo;
     }
-}
 
+    public Ciudadano getIdCiudadano() {
+        return idCiudadano;
+    }
+
+    public void setIdCiudadano(Ciudadano idCiudadano) {
+        this.idCiudadano = idCiudadano;
+    }
+}

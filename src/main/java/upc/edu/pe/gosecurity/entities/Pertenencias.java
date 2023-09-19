@@ -33,22 +33,25 @@ public class Pertenencias {
     @ManyToOne
     @JoinColumn(name="idPerteneneciasTipo")
     private PertenenciasTipo pertenenciasTipo;
-
+    @ManyToOne
+    @JoinColumn(name = "idCiudadano")
+    private Ciudadano idCiudadano;
     public Pertenencias() {
     }
 
-    public Pertenencias(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, String codigoPertenencias, int seriePertenencias,PertenenciasColor pertenenciasColor,PertenenciasMarca pertenenciasMarca,PertenenciasModelo pertenenciasModelo,PertenenciasTipo pertenenciasTipo ) {
+    public Pertenencias(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, String codigoPertenencias, int seriePertenencias, PertenenciasColor pertenenciasColor, PertenenciasMarca pertenenciasMarca, PertenenciasModelo pertenenciasModelo, PertenenciasTipo pertenenciasTipo, Ciudadano idCiudadano) {
         this.idPertenencias = idPertenencias;
         this.namePertenencias = namePertenencias;
-        this.AnioPertenencias = anioPertenencias;
-        this.EspecificacionesPertenencias = especificacionesPertenencias;
-        this.ImagenPertenencias = imagenPertenencias;
-        this.CodigoPertenencias = codigoPertenencias;
-        this.SeriePertenencias = seriePertenencias;
+        AnioPertenencias = anioPertenencias;
+        EspecificacionesPertenencias = especificacionesPertenencias;
+        ImagenPertenencias = imagenPertenencias;
+        CodigoPertenencias = codigoPertenencias;
+        SeriePertenencias = seriePertenencias;
         this.pertenenciasColor = pertenenciasColor;
         this.pertenenciasMarca = pertenenciasMarca;
         this.pertenenciasModelo = pertenenciasModelo;
         this.pertenenciasTipo = pertenenciasTipo;
+        this.idCiudadano = idCiudadano;
     }
 
     public int getIdPertenencias() {
@@ -137,6 +140,14 @@ public class Pertenencias {
 
     public void setPertenenciasTipo(PertenenciasTipo pertenenciasTipo) {
         this.pertenenciasTipo = pertenenciasTipo;
+    }
+
+    public Ciudadano getIdCiudadano() {
+        return idCiudadano;
+    }
+
+    public void setIdCiudadano(Ciudadano idCiudadano) {
+        this.idCiudadano = idCiudadano;
     }
 }
 
