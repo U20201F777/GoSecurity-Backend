@@ -18,16 +18,31 @@ public class Denuncias {
     private LocalDate FechaDenunciasRegistro;
     @Column(name = "Fecha_Emision", nullable = false)
     private LocalDate FechaDenunciasEmision;
-
+    @ManyToOne
+    @JoinColumn(name = "idDenunciasLugarHecho")
+    private DenunciasLugarHecho idDenunciasLugarHecho;
+    @ManyToOne
+    @JoinColumn(name = "idDenunciasTipificacion")
+    private DenunciasTipificacion idDenunciasTipificacion;
+    @ManyToOne
+    @JoinColumn(name = "idCiudadano")
+    private Ciudadano idCiudadano;
+    @ManyToOne
+    @JoinColumn(name = "idComisaria")
+    private Comisaria idComisaria;
     public Denuncias() {
     }
 
-    public Denuncias(int idDenuncias, String nameDenuncias, LocalDate fechaDenunciasHechos, LocalDate fechaDenunciasRegistro, LocalDate fechaDenunciasEmision) {
+    public Denuncias(int idDenuncias, String nameDenuncias, LocalDate fechaDenunciasHechos, LocalDate fechaDenunciasRegistro, LocalDate fechaDenunciasEmision, DenunciasLugarHecho idDenunciasLugarHecho, DenunciasTipificacion idDenunciasTipificacion, Ciudadano idCiudadano, Comisaria idComisaria) {
         this.idDenuncias = idDenuncias;
         this.nameDenuncias = nameDenuncias;
         FechaDenunciasHechos = fechaDenunciasHechos;
         FechaDenunciasRegistro = fechaDenunciasRegistro;
         FechaDenunciasEmision = fechaDenunciasEmision;
+        this.idDenunciasLugarHecho = idDenunciasLugarHecho;
+        this.idDenunciasTipificacion = idDenunciasTipificacion;
+        this.idCiudadano = idCiudadano;
+        this.idComisaria = idComisaria;
     }
 
     public int getIdDenuncias() {
@@ -68,6 +83,38 @@ public class Denuncias {
 
     public void setFechaDenunciasEmision(LocalDate fechaDenunciasEmision) {
         FechaDenunciasEmision = fechaDenunciasEmision;
+    }
+
+    public DenunciasLugarHecho getIdDenunciasLugarHecho() {
+        return idDenunciasLugarHecho;
+    }
+
+    public void setIdDenunciasLugarHecho(DenunciasLugarHecho idDenunciasLugarHecho) {
+        this.idDenunciasLugarHecho = idDenunciasLugarHecho;
+    }
+
+    public DenunciasTipificacion getIdDenunciasTipificacion() {
+        return idDenunciasTipificacion;
+    }
+
+    public void setIdDenunciasTipificacion(DenunciasTipificacion idDenunciasTipificacion) {
+        this.idDenunciasTipificacion = idDenunciasTipificacion;
+    }
+
+    public Ciudadano getIdCiudadano() {
+        return idCiudadano;
+    }
+
+    public void setIdCiudadano(Ciudadano idCiudadano) {
+        this.idCiudadano = idCiudadano;
+    }
+
+    public Comisaria getIdComisaria() {
+        return idComisaria;
+    }
+
+    public void setIdComisaria(Comisaria idComisaria) {
+        this.idComisaria = idComisaria;
     }
 }
 
