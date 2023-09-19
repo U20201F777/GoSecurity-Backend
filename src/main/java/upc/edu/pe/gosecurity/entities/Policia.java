@@ -20,42 +20,27 @@ public class Policia {
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
 
-    /*
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "idNotificacion")
-    private Notificacion notificacion;
+    private Notificacion idNotificacion;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "idComisaria")
-    private Comisaria comisaria;
-     */
+    private Comisaria idComisaria;
 
     public Policia() {
     }
 
-    public Policia(int idPolicia, String numeroPlacaPolicia, String fotoRostroPolicia, String fotoIdentPolicia, String rangoPolicia, Usuario usuario) {
+    public Policia(int idPolicia, String numeroPlacaPolicia, String fotoRostroPolicia, String fotoIdentPolicia, String rangoPolicia, Usuario usuario, Notificacion idNotificacion, Comisaria idComisaria) {
         this.idPolicia = idPolicia;
         this.numeroPlacaPolicia = numeroPlacaPolicia;
         this.fotoRostroPolicia = fotoRostroPolicia;
         this.fotoIdentPolicia = fotoIdentPolicia;
         this.rangoPolicia = rangoPolicia;
         this.usuario = usuario;
+        this.idNotificacion = idNotificacion;
+        this.idComisaria = idComisaria;
     }
-
-    /*
-    Nota: Contructores para implementar las relaciones 1 a 1 con Notificaciones y Comisaria , se debe remplazar o generar
-
-      public Policia(int idPolicia, String numeroPlacaPolicia, String fotoRostroPolicia, String fotoIdentPolicia, String rangoPolicia, Usuario usuario, Notificacion notificacion, Comisaria comisaria) {
-        this.idPolicia = idPolicia;
-        this.numeroPlacaPolicia = numeroPlacaPolicia;
-        this.fotoRostroPolicia = fotoRostroPolicia;
-        this.fotoIdentPolicia = fotoIdentPolicia;
-        this.rangoPolicia = rangoPolicia;
-        this.usuario = usuario;
-        this.Notificacion = notificacion;
-        this.Comisaria = comisaria;
-    }
-     */
 
     public int getIdPolicia() {
         return idPolicia;
@@ -105,23 +90,19 @@ public class Policia {
         this.usuario = usuario;
     }
 
-    /*
-    Notas: getter and setter de Notificación y comisaria
-
-     public Notificacion getNotificacion() {
-        return notificacion;
+    public Notificacion getIdNotificacion() {
+        return idNotificacion;
     }
 
-    public void setNotificacion(Notificacion notificacion) {
-        this.notificacion = notificacion;
+    public void setIdNotificacion(Notificacion idNotificacion) {
+        this.idNotificacion = idNotificacion;
     }
 
-      public Comisaria getComisaria() {
-        return notificacion;
+    public Comisaria getIdComisaria() {
+        return idComisaria;
     }
 
-    public void setComisaria(Comisaria comisaria) {
-        this.comisaria = comisaria;
+    public void setIdComisaria(Comisaria idComisaria) {
+        this.idComisaria = idComisaria;
     }
-     */
 }

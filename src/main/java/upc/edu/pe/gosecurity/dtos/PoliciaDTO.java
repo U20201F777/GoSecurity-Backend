@@ -1,5 +1,7 @@
 package upc.edu.pe.gosecurity.dtos;
 
+import upc.edu.pe.gosecurity.entities.Comisaria;
+import upc.edu.pe.gosecurity.entities.Notificacion;
 import upc.edu.pe.gosecurity.entities.Usuario;
 
 public class PoliciaDTO {
@@ -9,13 +11,8 @@ public class PoliciaDTO {
     private String fotoIdentPolicia;
     private String rangoPolicia;
     private Usuario usuario;
-
-    /*
-    Nota: añadir relaciones notificacion y comisaria
-
-    private Notificacion notificacion;
-    private Comisaria comisaria;
-     */
+    private Notificacion idNotificacion;
+    private Comisaria idComisaria;
 
     public int getIdPolicia() {
         return idPolicia;
@@ -65,24 +62,19 @@ public class PoliciaDTO {
         this.usuario = usuario;
     }
 
-    /*
-    Añadir getter and setter
-
-     public Notificacion getNotificacion() {
-        return notificacion;
+    public Notificacion getIdNotificacion() {
+        return idNotificacion;
     }
 
-    public void setNotificacion(Notificacion notificacion) {
-        this.notificacion = notificacion;
+    public void setIdNotificacion(Notificacion idNotificacion) {
+        this.idNotificacion = idNotificacion;
     }
 
-     public Comisaria getComisaria() {
-        return comisaria;
+    public Comisaria getIdComisaria() {
+        return idComisaria;
     }
 
-    public void setComisaria(Comisaria comisaria) {
-        this.comisaria = comisaria;
+    public void setIdComisaria(Comisaria idComisaria) {
+        this.idComisaria = idComisaria;
     }
-     */
-
 }
