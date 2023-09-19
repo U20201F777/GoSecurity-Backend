@@ -2,13 +2,15 @@ package upc.edu.pe.gosecurity.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Table(name = "Usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuario;
-    @Column(name = "nombreUsuario", length = 100,nullable =false)
+    @Column(name = "nombreUsuario", length = 100,nullable =false, unique = true)
     private String nombreUsuario;
     @Column(name = "apellidoUsuario", length = 100,nullable = false)
     private String apellidoUsuario;
@@ -20,6 +22,9 @@ public class Usuario {
     private String contrasenaUsuario;
     @Column(name = "generoUsuario", nullable = false)
     private char generoUsuario;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_Usuario")
+    private List<Role> roles;
 
     public Usuario() {
     }
