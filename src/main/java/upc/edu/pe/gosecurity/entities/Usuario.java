@@ -9,89 +9,53 @@ import java.util.List;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuario;
-    @Column(name = "nombreUsuario", length = 100,nullable =false, unique = true)
-    private String nombreUsuario;
-    @Column(name = "apellidoUsuario", length = 100,nullable = false)
-    private String apellidoUsuario;
-    @Column(name ="fechaNacimientoUsuario", nullable = false)
-    private LocalDate fechaNacimientoUsuario;
-    @Column(name = "correoUsuario", length = 100, nullable = false)
-    private String correoUsuario;
-    @Column(name = "contrasenaUsuario", length = 30, nullable = false)
-    private String contrasenaUsuario;
-    @Column(name = "generoUsuario", nullable = false)
-    private char generoUsuario;
+    private Long id;
+    @Column(length = 30, unique = true)
+    private String username;
+    @Column(length = 200)
+    private String password;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_Usuario")
     private List<Role> roles;
+    private Boolean enabled;
 
-    public Usuario() {
+    public Long getId() {
+        return id;
     }
 
-    public Usuario(int idUsuario, String nombreUsuario, String apellidoUsuario, LocalDate fechaNacimientoUsuario, String correoUsuario, String contrasenaUsuario, char generoUsuario) {
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
-        this.apellidoUsuario = apellidoUsuario;
-        this.fechaNacimientoUsuario = fechaNacimientoUsuario;
-        this.correoUsuario = correoUsuario;
-        this.contrasenaUsuario = contrasenaUsuario;
-        this.generoUsuario = generoUsuario;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getPassword() {
+        return password;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getApellidoUsuario() {
-        return apellidoUsuario;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setApellidoUsuario(String apellidoUsuario) {
-        this.apellidoUsuario = apellidoUsuario;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
-    public LocalDate getFechaNacimientoUsuario() {
-        return fechaNacimientoUsuario;
+    public Boolean getEnabled() {
+        return enabled;
     }
 
-    public void setFechaNacimientoUsuario(LocalDate fechaNacimientoUsuario) {
-        this.fechaNacimientoUsuario = fechaNacimientoUsuario;
-    }
-
-    public String getCorreoUsuario() {
-        return correoUsuario;
-    }
-
-    public void setCorreoUsuario(String correoUsuario) {
-        this.correoUsuario = correoUsuario;
-    }
-
-    public String getContrasenaUsuario() {
-        return contrasenaUsuario;
-    }
-
-    public void setContrasenaUsuario(String contrasenaUsuario) {
-        this.contrasenaUsuario = contrasenaUsuario;
-    }
-
-    public char getGeneroUsuario() {
-        return generoUsuario;
-    }
-
-    public void setGeneroUsuario(char generoUsuario) {
-        this.generoUsuario = generoUsuario;
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 }

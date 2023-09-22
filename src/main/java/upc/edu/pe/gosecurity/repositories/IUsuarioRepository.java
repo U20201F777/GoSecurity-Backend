@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import upc.edu.pe.gosecurity.entities.Usuario;
 @Repository
-public interface IUsuarioRepository extends JpaRepository <Usuario, Integer> {
-    public Usuario findByNombreUsuario (String nombreUsuario);
+public interface IUsuarioRepository extends JpaRepository <Usuario, Long> {
+    public Usuario findByUsername (String username);
 
-    @Query("select count(u.nombreUsuario) from Usuario u where u.nombreUsuario =:nombreUsuario")
-    public int buscarUsername(@Param("nombreUsuario") String nombreUsuario);
+    @Query("select count(u.username) from Usuario u where u.username =:username")
+    public int buscarUsername(@Param("username") String username);
 
     @Transactional
     @Modifying
