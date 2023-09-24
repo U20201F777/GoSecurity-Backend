@@ -35,20 +35,6 @@ public class PModeloController {
         ModR.delete(id);
     }
 
-    @GetMapping("/{id}")
-    public PModeloDTO ListarId(@PathVariable("id") Integer id){
-        ModelMapper m = new ModelMapper();
-        PModeloDTO dto=m.map(ModR.ListId(id), PModeloDTO.class);
-        return dto;
-    }
-    @PostMapping("/buscar")
-    public List<PModeloDTO>buscar(@RequestBody String name){
-        return ModR.findByNamePertenenciasModelo(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, PModeloDTO.class);
-        }).collect(Collectors.toList());
-    }
-
     @PutMapping
     public void Modificar(@RequestBody PModeloDTO dto){
         ModelMapper m = new ModelMapper();

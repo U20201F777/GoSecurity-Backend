@@ -28,16 +28,4 @@ public class PTipoImplements implements PTipoInterfaces {
         TR.deleteById(idPerteneneciasTipo);
 
     }
-    @Override
-    public PertenenciasTipo ListId(int idPerteneneciasTipo){
-
-        return TR.findById(idPerteneneciasTipo).orElse(new PertenenciasTipo());
-
-    }
-
-    @Override
-    public List<PertenenciasTipo> findByNamePertenenciasTipo(String namePertenenciasTipo) {
-        return TR.findByNamePertenenciasTipo(namePertenenciasTipo);
-    }
 }
-

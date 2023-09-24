@@ -27,9 +27,4 @@ public class IUbicacionCImplements implements IUbicacionCService {
     public void delete(int idUbicacionC) {
         uR.deleteById(idUbicacionC);
     }
-
-    @Override
-    public UbicacionC listId(int idUbicacionC) {
-        return uR.findById(idUbicacionC).orElse(new UbicacionC());
-    }
 }

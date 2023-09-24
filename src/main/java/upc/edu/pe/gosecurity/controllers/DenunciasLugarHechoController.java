@@ -34,19 +34,6 @@ public class DenunciasLugarHechoController {
     public void eliminar(@PathVariable("id") Integer id){
         pS.delete(id);
     }
-    @GetMapping("/{id}")
-    public DenunciasLugarHechoDTO listaId(@PathVariable("id") Integer id){
-        ModelMapper m= new ModelMapper();
-        DenunciasLugarHechoDTO dto=m.map(pS.listId(id), DenunciasLugarHechoDTO.class);
-        return dto;
-    }
-    @PostMapping("/buscar")
-    public List<DenunciasLugarHechoDTO>buscar(@RequestBody String name){
-        return pS.findByNameDenunciasLugarHecho(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, DenunciasLugarHechoDTO.class);
-        }).collect(Collectors.toList());
-    }
     @PutMapping
     public void Modificar(@RequestBody DenunciasLugarHechoDTO dto){
         ModelMapper m = new ModelMapper();

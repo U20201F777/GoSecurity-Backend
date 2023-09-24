@@ -25,14 +25,5 @@ public class PModeloImplements implements PModeloInterfaces {
     public void delete(int idPertenenciasModelo){
         ModR.deleteById(idPertenenciasModelo);
     }
-    @Override
-    public PertenenciasModelo ListId(int idPertenenciasModelo){
-        return ModR.findById(idPertenenciasModelo).orElse(new PertenenciasModelo());
-    }
-
-    @Override
-    public List<PertenenciasModelo> findByNamePertenenciasModelo(String namePertenenciasModelo) {
-        return ModR.findByNamePertenenciasModelo(namePertenenciasModelo);
-    }
 }
 

@@ -7,4 +7,6 @@ import java.util.List;
 public interface ICiudadanoService {
     public void insert(Ciudadano ciudadano);
     public List<Ciudadano> list();
+    public void delete(int idCiudadano);
+    List<Ciudadano> findByNumeroCiudadano(String dniCiudadano);
 }

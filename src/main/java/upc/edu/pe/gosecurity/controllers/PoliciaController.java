@@ -29,4 +29,8 @@ public class PoliciaController {
             return m.map(x, PoliciaDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        pS.delete(id);
+    }
 }

@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PertenenciasRepository extends JpaRepository <Pertenencias,Integer> {
-    List<Pertenencias>findByNamePertenencias(String namePertenencias);
 }
 

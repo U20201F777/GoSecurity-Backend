@@ -26,14 +26,4 @@ public class PColorImplements implements PColorInterfaces {
     public void delete(int idPertenenciasColor){
         CR.deleteById(idPertenenciasColor);
     }
-    @Override
-    public PertenenciasColor ListId(int idPertenenciasColor){
-        return CR.findById(idPertenenciasColor).orElse(new PertenenciasColor());
-    }
-
-    @Override
-    public List<PertenenciasColor> findByNamePertenenciasColor(String namePertenenciasColor) {
-        return CR.findByNamePertenenciasColor(namePertenenciasColor);
-    }
 }
-

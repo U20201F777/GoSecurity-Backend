@@ -28,14 +28,4 @@ public class DenunciasTipificacionServiceImplement implements IDenunciasTipifica
         pR.deleteById(idDenunciasTipificacion);
     }
 
-    @Override
-    public DenunciasTipificacion listId(int idDenunciasTipificacion) {
-        return pR.findById(idDenunciasTipificacion).orElse(new DenunciasTipificacion());
-    }
-
-    @Override
-    public List<DenunciasTipificacion> findByNameDenunciasTipificacion(String nameDenunciasTipificacion) {
-        return pR.findByNameDenunciasTipificacion(nameDenunciasTipificacion);
-    }
-
 }

@@ -29,5 +29,8 @@ public class CiudadanoController {
             return m.map(x, CiudadanoDTO.class);
         }).collect(Collectors.toList());
     }
-
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        cS.delete(id);
+    }
 }

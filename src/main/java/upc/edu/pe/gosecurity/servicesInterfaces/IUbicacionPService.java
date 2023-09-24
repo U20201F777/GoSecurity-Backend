@@ -9,6 +9,4 @@ public interface IUbicacionPService {
     public void insert(UbicacionP ubicacionP);
     public List<UbicacionP> list();
     public void delete(int idUbicacionP);
-    public UbicacionP listId(int idUbicacionP);
-
 }

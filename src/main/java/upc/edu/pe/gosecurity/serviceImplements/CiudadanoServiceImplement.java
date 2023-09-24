@@ -22,4 +22,14 @@ public class CiudadanoServiceImplement implements ICiudadanoService {
     public List<Ciudadano> list() {
         return cR.findAll();
     }
+
+    @Override
+    public void delete(int idCiudadano) {
+        cR.deleteById(idCiudadano);
+    }
+
+    @Override
+    public List<Ciudadano> findByNumeroCiudadano(String dniCiudadano) {
+        return cR.findByNumeroCiudadano(dniCiudadano);
+    }
 }

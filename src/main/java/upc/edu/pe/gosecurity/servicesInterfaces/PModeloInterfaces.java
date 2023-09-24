@@ -8,8 +8,4 @@ public interface PModeloInterfaces {
     public void insert(PertenenciasModelo pertenenciasModelo);
     public List<PertenenciasModelo> list();
     public void delete(int idPertenenciasModelo);
-    public PertenenciasModelo ListId(int idPertenenciasModelo);
-
-    List<PertenenciasModelo>findByNamePertenenciasModelo (String namePertenenciasModelo);
 }
-

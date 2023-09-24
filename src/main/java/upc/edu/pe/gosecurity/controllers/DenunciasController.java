@@ -38,13 +38,6 @@ public class DenunciasController {
         DenunciasDTO dto=m.map(pS.listId(id), DenunciasDTO.class);
         return dto;
     }
-    @PostMapping("/buscar")
-    public List<DenunciasDTO>buscar(@RequestBody String name){
-        return pS.findByNameDenuncias(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, DenunciasDTO.class);
-        }).collect(Collectors.toList());
-    }
     @PutMapping
     public void Modificar(@RequestBody DenunciasDTO dto){
         ModelMapper m = new ModelMapper();

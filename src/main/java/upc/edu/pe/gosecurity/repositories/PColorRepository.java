@@ -8,6 +8,4 @@ import java.util.List;
 
 @Repository
 public interface PColorRepository extends JpaRepository <PertenenciasColor,Integer> {
-    List<PertenenciasColor>findByNamePertenenciasColor(String namePertenenciasColor);
 }
-

@@ -9,7 +9,5 @@ public interface PertenenciasInterfaces {
     public List<Pertenencias> list();
     public void delete(int idPertenencias);
     public Pertenencias ListId(int idPertenencias);
-
-    List<Pertenencias>findByNamePertenencias(String namePertenencias);
 }
 

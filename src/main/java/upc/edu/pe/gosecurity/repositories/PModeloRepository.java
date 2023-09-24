@@ -8,6 +8,4 @@ import java.util.List;
 
 @Repository
 public interface PModeloRepository extends JpaRepository <PertenenciasModelo,Integer> {
-    List<PertenenciasModelo>findByNamePertenenciasModelo (String namePertenenciasModelo);
 }
-

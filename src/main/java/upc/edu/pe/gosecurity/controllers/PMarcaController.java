@@ -35,20 +35,6 @@ public class PMarcaController {
         MarR.delete(id);
     }
 
-    @GetMapping("/{id}")
-    public PMarcaDTO ListarId(@PathVariable("id") Integer id){
-        ModelMapper m = new ModelMapper();
-        PMarcaDTO dto=m.map(MarR.ListId(id), PMarcaDTO.class);
-        return dto;
-    }
-    @PostMapping("/buscar")
-    public List<PMarcaDTO>buscar(@RequestBody String name){
-        return MarR.findByNamePertenenciasMarca(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, PMarcaDTO.class);
-        }).collect(Collectors.toList());
-    }
-
     @PutMapping
     public void Modificar(@RequestBody PMarcaDTO dto){
         ModelMapper m = new ModelMapper();

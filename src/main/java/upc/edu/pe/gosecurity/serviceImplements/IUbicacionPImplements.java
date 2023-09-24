@@ -26,9 +26,4 @@ public class IUbicacionPImplements implements IUbicacionPService {
     public void delete(int idUbicacionP) {
         uR.deleteById(idUbicacionP);
     }
-
-    @Override
-    public UbicacionP listId(int idUbicacionP) {
-        return uR.findById(idUbicacionP).orElse(new UbicacionP());
-    }
 }

@@ -33,19 +33,6 @@ public class DenunciasTipificacionController {
     public void eliminar(@PathVariable("id") Integer id){
         pS.delete(id);
     }
-    @GetMapping("/{id}")
-    public DenunciasTipificacionDTO listaId(@PathVariable("id") Integer id){
-        ModelMapper m= new ModelMapper();
-        DenunciasTipificacionDTO dto=m.map(pS.listId(id), DenunciasTipificacionDTO.class);
-        return dto;
-    }
-    @PostMapping("/buscar")
-    public List<DenunciasTipificacionDTO>buscar(@RequestBody String name){
-        return pS.findByNameDenunciasTipificacion(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, DenunciasTipificacionDTO.class);
-        }).collect(Collectors.toList());
-    }
     @PutMapping
     public void Modificar(@RequestBody DenunciasTipificacionDTO dto){
         ModelMapper m = new ModelMapper();

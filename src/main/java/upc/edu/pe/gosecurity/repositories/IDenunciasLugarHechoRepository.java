@@ -8,5 +8,4 @@ import java.util.List;
 
 @Repository
 public interface IDenunciasLugarHechoRepository extends JpaRepository<DenunciasLugarHecho,Integer> {
-    List<DenunciasLugarHecho> findByNameDenunciasLugarHecho(String nameDenunciasLugarHechoComisaria);
-}
+    }

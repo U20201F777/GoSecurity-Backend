@@ -36,19 +36,6 @@ public class PeTipoController {
     }
 
     @GetMapping("/{id}")
-    public PTipoDTO ListarId(@PathVariable("id") Integer id){
-        ModelMapper m = new ModelMapper();
-        PTipoDTO dto=m.map(TR.ListId(id), PTipoDTO.class);
-        return dto;
-    }
-    @PostMapping("/buscar")
-    public List<PTipoDTO>buscar(@RequestBody String name){
-        return TR.findByNamePertenenciasTipo(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, PTipoDTO.class);
-        }).collect(Collectors.toList());
-    }
-
     @PutMapping
     public void Modificar(@RequestBody PTipoDTO dto){
         ModelMapper m = new ModelMapper();

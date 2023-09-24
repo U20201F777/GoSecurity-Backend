@@ -8,8 +8,4 @@ public interface PTipoInterfaces {
     public void insert(PertenenciasTipo pertenenciasTipo);
     public List<PertenenciasTipo> list();
     public void delete(int idPerteneneciasTipo);
-    public PertenenciasTipo ListId(int idPerteneneciasTipo);
-
-    List<PertenenciasTipo>findByNamePertenenciasTipo (String namePertenenciasTipo);
 }
-

@@ -32,13 +32,6 @@ public class AyudaControllers {
     public void delete(@PathVariable("id") Integer id) {
         aS.delete(id);
     }
-
-    @GetMapping("/{id}")
-    public AyudaDTO listId(@PathVariable("id") Integer id) {
-        ModelMapper m = new ModelMapper();
-        AyudaDTO dto = m.map(aS.listId(id), AyudaDTO.class);
-        return dto;
-    }
     @PutMapping
     public void Modificar(@RequestBody AyudaDTO dto){
         ModelMapper m= new ModelMapper();

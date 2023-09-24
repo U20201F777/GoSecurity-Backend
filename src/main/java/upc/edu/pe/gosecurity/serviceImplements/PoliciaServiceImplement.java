@@ -22,4 +22,14 @@ public class PoliciaServiceImplement implements IPoliciaService {
     public List<Policia> list() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idPolicia) {
+        pR.deleteById(idPolicia);
+    }
+
+    @Override
+    public List<Policia> findByNumeroPlacaPolicia(String NroPlaca) {
+        return pR.findByNumeroPlacaPolicia(NroPlaca);
+    }
 }

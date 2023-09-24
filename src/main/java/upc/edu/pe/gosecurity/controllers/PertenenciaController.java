@@ -41,15 +41,6 @@ public class PertenenciaController {
         PertenenciaDTO dto=m.map(PR.ListId(id), PertenenciaDTO.class);
         return dto;
     }
-
-    @PostMapping("/buscar")
-    public List<PertenenciaDTO>buscar(@RequestBody String name){
-        return PR.findByNamePertenencias(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, PertenenciaDTO.class);
-        }).collect(Collectors.toList());
-    }
-
     @PutMapping
     public void Modificar(@RequestBody PertenenciaDTO dto){
         ModelMapper m = new ModelMapper();

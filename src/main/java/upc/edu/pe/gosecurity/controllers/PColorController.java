@@ -34,21 +34,6 @@ public class PColorController {
     public void eliminar(@PathVariable("id")Integer id ){
         CR.delete(id);
     }
-
-    @GetMapping("/{id}")
-    public PColorDTO ListarId(@PathVariable("id") Integer id){
-        ModelMapper m = new ModelMapper();
-        PColorDTO dto=m.map(CR.ListId(id), PColorDTO.class);
-        return dto;
-    }
-    @PostMapping("/buscar")
-    public List<PColorDTO>buscar(@RequestBody String name){
-        return CR.findByNamePertenenciasColor(name).stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, PColorDTO.class);
-        }).collect(Collectors.toList());
-    }
-
     @PutMapping
     public void Modificar(@RequestBody PColorDTO dto){
         ModelMapper m = new ModelMapper();

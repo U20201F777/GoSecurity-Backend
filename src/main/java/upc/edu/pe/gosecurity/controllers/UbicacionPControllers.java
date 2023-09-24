@@ -33,13 +33,6 @@ public class UbicacionPControllers {
         uS.delete(id);
     }
 
-    @GetMapping("/{id}")
-    public UbicacionPDTO listId(@PathVariable("id") Integer id) {
-        ModelMapper m = new ModelMapper();
-        UbicacionPDTO dto = m.map(uS.listId(id), UbicacionPDTO.class);
-        return dto;
-    }
-
     @PutMapping
     public void modificar(@RequestBody UbicacionPDTO dto){
         ModelMapper m = new ModelMapper();

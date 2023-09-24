@@ -31,10 +31,4 @@ public class PertenenciasImplements implements PertenenciasInterfaces {
     public Pertenencias ListId(int idPertenencias){
         return PR.findById(idPertenencias).orElse(new Pertenencias());
     }
-
-    @Override
-    public List<Pertenencias> findByNamePertenencias(String namePertenencias) {
-        return PR.findByNamePertenencias(namePertenencias);
-    }
 }
-

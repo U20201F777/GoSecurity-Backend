@@ -32,10 +32,4 @@ public class DenunciasServiceImplement implements IDenunciasService {
     public Denuncias listId(int idDenuncias) {
         return pR.findById(idDenuncias).orElse(new Denuncias());
     }
-
-    @Override
-    public List<Denuncias> findByNameDenuncias(String nameDenuncias) {
-        return pR.findByNameDenuncias(nameDenuncias);
-    }
-
 }
