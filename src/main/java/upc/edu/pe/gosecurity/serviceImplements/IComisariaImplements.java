@@ -31,4 +31,10 @@ public class IComisariaImplements implements IComisariaService {
     public Comisaria listId(int idComisaria) {
         return cR.findById(idComisaria).orElse(new Comisaria());
     }
+
+    @Override
+    public List<String[]> FindByDenunciasComisariaPolicia() {
+        return cR.FindByDenunciasComisariaPolicia();
+    }
+
 }

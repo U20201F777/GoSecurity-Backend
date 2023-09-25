@@ -9,4 +9,5 @@ public interface IPoliciaService {
     public List<Policia> list();
     public void delete(int idPolicia);
     List<Policia> findByNumeroPlacaPolicia(String NroPlaca);
+    public List<String[]> finByDescripcionNotixCiudadano();
 }
