@@ -2,11 +2,14 @@ package upc.edu.pe.gosecurity.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
+import upc.edu.pe.gosecurity.dtos.DenunciasxCiudadanoDTO;
 import upc.edu.pe.gosecurity.entities.Denuncias;
 import upc.edu.pe.gosecurity.servicesInterfaces.IDenunciasService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,6 +47,17 @@ public class DenunciasController {
         Denuncias p=m.map(dto,Denuncias.class);
         pS.insert(p);
     }
-
-
+    @GetMapping("/DenunciasxCiudadano")
+    public List<DenunciasxCiudadanoDTO> DenunciasxCiudadano(){
+        List<String[]> lista=pS.DenunciasxCiudadano();
+        List<DenunciasxCiudadanoDTO> listaDTO=new ArrayList<>();
+        for (String[] data:lista){
+            DenunciasxCiudadanoDTO dto= new DenunciasxCiudadanoDTO();
+            dto.setIdDenuncias(Integer.parseInt(data[0]));
+            dto.setDNIciudadano(Integer.parseInt(data[1]));
+            dto.setCantDenuncias(Integer.parseInt(data[2]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
+    }
 }
