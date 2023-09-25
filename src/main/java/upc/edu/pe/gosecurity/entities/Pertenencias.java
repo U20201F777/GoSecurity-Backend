@@ -39,10 +39,13 @@ public class Pertenencias {
     @ManyToOne
     @JoinColumn(name = "idUbicacionP")
     private UbicacionP idUbicacionP;
+    @ManyToOne
+    @JoinColumn(name = "idAyuda")
+    private Ayuda idAyuda;
     public Pertenencias() {
     }
 
-    public Pertenencias(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, String codigoPertenencias, int seriePertenencias, PertenenciasColor pertenenciasColor, PertenenciasMarca pertenenciasMarca, PertenenciasModelo pertenenciasModelo, PertenenciasTipo pertenenciasTipo, Ciudadano idCiudadano, UbicacionP idUbicacionP) {
+    public Pertenencias(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, String codigoPertenencias, int seriePertenencias, PertenenciasColor pertenenciasColor, PertenenciasMarca pertenenciasMarca, PertenenciasModelo pertenenciasModelo, PertenenciasTipo pertenenciasTipo, Ciudadano idCiudadano, UbicacionP idUbicacionP, Ayuda idAyuda) {
         this.idPertenencias = idPertenencias;
         this.namePertenencias = namePertenencias;
         AnioPertenencias = anioPertenencias;
@@ -56,6 +59,7 @@ public class Pertenencias {
         this.pertenenciasTipo = pertenenciasTipo;
         this.idCiudadano = idCiudadano;
         this.idUbicacionP = idUbicacionP;
+        this.idAyuda = idAyuda;
     }
 
     public int getIdPertenencias() {
@@ -160,6 +164,14 @@ public class Pertenencias {
 
     public void setIdUbicacionP(UbicacionP idUbicacionP) {
         this.idUbicacionP = idUbicacionP;
+    }
+
+    public Ayuda getIdAyuda() {
+        return idAyuda;
+    }
+
+    public void setIdAyuda(Ayuda idAyuda) {
+        this.idAyuda = idAyuda;
     }
 }
 

@@ -32,4 +32,9 @@ public class PoliciaServiceImplement implements IPoliciaService {
     public List<Policia> findByNumeroPlacaPolicia(String NroPlaca) {
         return pR.findByNumeroPlacaPolicia(NroPlaca);
     }
+
+    @Override
+    public List<String[]> finByDescripcionNotixCiudadano() {
+        return pR.finByDescripcionNotixCiudadano();
+    }
 }
