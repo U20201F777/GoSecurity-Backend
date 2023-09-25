@@ -2,9 +2,13 @@ package upc.edu.pe.gosecurity.dtos;
 
 public class DCPxDTO {
     private int id_comisaria;
+
     private String nombre_c;
+
     private int Cant_policia;
+
     private int Cant_denuncias;
+    
 
     public int getId_comisaria() {
         return id_comisaria;
