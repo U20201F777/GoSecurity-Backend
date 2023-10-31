@@ -8,7 +8,7 @@ public class DCPxDTO {
     private int Cant_policia;
 
     private int Cant_denuncias;
-    
+
 
     public int getId_comisaria() {
         return id_comisaria;
