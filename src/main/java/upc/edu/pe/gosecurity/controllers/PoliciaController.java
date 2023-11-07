@@ -2,7 +2,6 @@ package upc.edu.pe.gosecurity.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.NotixCiudadanoDTO;
 import upc.edu.pe.gosecurity.dtos.PoliciaDTO;
@@ -48,7 +47,6 @@ public class PoliciaController {
         }).collect(Collectors.toList());
     }
     @GetMapping("/NotixCiudadano")
-    @PreAuthorize("hasAnyAuthority('POLICIA')")
     public List<NotixCiudadanoDTO> NotificacionxCiudadano(){
         List<String[]> lista=pS.finByDescripcionNotixCiudadano();
         List<NotixCiudadanoDTO> listaDTO=new ArrayList<>();
