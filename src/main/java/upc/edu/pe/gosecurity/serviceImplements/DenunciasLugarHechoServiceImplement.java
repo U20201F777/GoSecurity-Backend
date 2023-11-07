@@ -28,4 +28,9 @@ public class DenunciasLugarHechoServiceImplement implements IDenunciasLugarHecho
         pR.deleteById(idDenunciasLugarHecho);
     }
 
+    @Override
+    public DenunciasLugarHecho listId(int idDenunciasLugarHecho) {
+        return pR.findById(idDenunciasLugarHecho).orElse(new DenunciasLugarHecho());
+    }
+
 }

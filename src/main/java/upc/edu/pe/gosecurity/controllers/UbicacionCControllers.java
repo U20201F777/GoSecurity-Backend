@@ -4,6 +4,7 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.AyudaDTO;
 import upc.edu.pe.gosecurity.dtos.UbicacionCDTO;
 import upc.edu.pe.gosecurity.entities.UbicacionC;
 import upc.edu.pe.gosecurity.servicesInterfaces.IUbicacionCService;
@@ -30,6 +31,12 @@ public class UbicacionCControllers {
             ModelMapper m = new ModelMapper();
             return m.map(x, UbicacionCDTO.class);
         }).collect(Collectors.toList());
+    }
+    @GetMapping("/{id}")
+    public UbicacionCDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        UbicacionCDTO dto=m.map(uS.listId(id), UbicacionCDTO.class);
+        return dto;
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {

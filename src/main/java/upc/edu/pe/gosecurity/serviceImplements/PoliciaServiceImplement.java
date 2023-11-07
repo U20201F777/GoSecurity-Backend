@@ -2,6 +2,7 @@ package upc.edu.pe.gosecurity.serviceImplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import upc.edu.pe.gosecurity.entities.Denuncias;
 import upc.edu.pe.gosecurity.entities.Policia;
 import upc.edu.pe.gosecurity.repositories.IPoliciaRepository;
 import upc.edu.pe.gosecurity.servicesInterfaces.IPoliciaService;
@@ -26,6 +27,11 @@ public class PoliciaServiceImplement implements IPoliciaService {
     @Override
     public void delete(int idPolicia) {
         pR.deleteById(idPolicia);
+    }
+
+    @Override
+    public Policia listId(int idPolicia) {
+        return pR.findById(idPolicia).orElse(new Policia());
     }
 
     @Override

@@ -25,4 +25,9 @@ public class IAyudaImplemets implements IAyudaService {
     public void delete(int idAyuda) {
         aR.deleteById(idAyuda);
     }
+
+    @Override
+    public Ayuda listId(int idAyuda) {
+        return aR.findById(idAyuda).orElse(new Ayuda());
+    }
 }

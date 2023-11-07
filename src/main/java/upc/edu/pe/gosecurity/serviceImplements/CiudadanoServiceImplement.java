@@ -29,6 +29,11 @@ public class CiudadanoServiceImplement implements ICiudadanoService {
     }
 
     @Override
+    public Ciudadano listId(int idCiudadano) {
+        return cR.findById(idCiudadano).orElse(new Ciudadano());
+    }
+
+    @Override
     public List<Ciudadano> findByNumeroCiudadano(String dniCiudadano) {
         return cR.findByNumeroCiudadano(dniCiudadano);
     }

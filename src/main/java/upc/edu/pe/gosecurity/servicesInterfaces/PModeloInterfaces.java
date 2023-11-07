@@ -1,5 +1,7 @@
 package upc.edu.pe.gosecurity.servicesInterfaces;
 
+import upc.edu.pe.gosecurity.entities.DenunciasLugarHecho;
+import upc.edu.pe.gosecurity.entities.PertenenciasMarca;
 import upc.edu.pe.gosecurity.entities.PertenenciasModelo;
 
 import java.util.List;
@@ -8,4 +10,5 @@ public interface PModeloInterfaces {
     public void insert(PertenenciasModelo pertenenciasModelo);
     public List<PertenenciasModelo> list();
     public void delete(int idPertenenciasModelo);
+    public PertenenciasModelo listId(int idPertenenciasModelo);
 }

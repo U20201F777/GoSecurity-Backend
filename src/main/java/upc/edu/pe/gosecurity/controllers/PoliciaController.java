@@ -3,8 +3,10 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.AyudaDTO;
 import upc.edu.pe.gosecurity.dtos.NotixCiudadanoDTO;
 import upc.edu.pe.gosecurity.dtos.PoliciaDTO;
+import upc.edu.pe.gosecurity.entities.Ayuda;
 import upc.edu.pe.gosecurity.entities.Policia;
 import upc.edu.pe.gosecurity.servicesInterfaces.IPoliciaService;
 
@@ -33,10 +35,21 @@ public class PoliciaController {
             return m.map(x, PoliciaDTO.class);
         }).collect(Collectors.toList());
     }
-
+    @GetMapping("/{id}")
+    public PoliciaDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        PoliciaDTO dto=m.map(pS.listId(id), PoliciaDTO.class);
+        return dto;
+    }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         pS.delete(id);
+    }
+    @PutMapping
+    public void Modificar(@RequestBody PoliciaDTO dto){
+        ModelMapper m= new ModelMapper();
+        Policia p=m.map(dto, Policia.class);
+        pS.insert(p);
     }
 
     @PostMapping("/buscarPlaca")
