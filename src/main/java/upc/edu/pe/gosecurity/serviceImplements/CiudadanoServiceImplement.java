@@ -24,6 +24,11 @@ public class CiudadanoServiceImplement implements ICiudadanoService {
     }
 
     @Override
+    public Ciudadano listId(int idCiudadano) {
+        return cR.findById(idCiudadano).orElse(new Ciudadano());
+    }
+
+    @Override
     public void delete(int idCiudadano) {
         cR.deleteById(idCiudadano);
     }

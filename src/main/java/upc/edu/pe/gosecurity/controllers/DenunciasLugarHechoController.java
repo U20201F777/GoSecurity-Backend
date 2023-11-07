@@ -4,7 +4,9 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
 import upc.edu.pe.gosecurity.dtos.DenunciasLugarHechoDTO;
+import upc.edu.pe.gosecurity.dtos.UbicacionCDTO;
 import upc.edu.pe.gosecurity.entities.DenunciasLugarHecho;
 import upc.edu.pe.gosecurity.servicesInterfaces.IDenunciasLugarHechoService;
 
@@ -22,6 +24,12 @@ public class DenunciasLugarHechoController {
         ModelMapper m = new ModelMapper();
         DenunciasLugarHecho d=m.map(dto, DenunciasLugarHecho.class);
         pS.insert(d);
+    }
+    @GetMapping("/{id}")
+    public DenunciasLugarHechoDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        DenunciasLugarHechoDTO dto=m.map(pS.listId(id), DenunciasLugarHechoDTO.class);
+        return dto;
     }
     @GetMapping
     public List<DenunciasLugarHechoDTO> Listar(){

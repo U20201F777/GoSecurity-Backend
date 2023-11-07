@@ -24,6 +24,11 @@ public class PoliciaServiceImplement implements IPoliciaService {
     }
 
     @Override
+    public Policia listId(int idPolicia) {
+        return pR.findById(idPolicia).orElse(new Policia());
+    }
+
+    @Override
     public void delete(int idPolicia) {
         pR.deleteById(idPolicia);
     }

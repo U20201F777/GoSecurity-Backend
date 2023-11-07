@@ -27,4 +27,9 @@ public class PMarcaImplements implements PMarcaInterfaces {
 
         MarR.deleteById(idPertenenciasMarca);
     }
+
+    @Override
+    public PertenenciasMarca listId(int idPertenenciasMarca) {
+        return MarR.findById(idPertenenciasMarca).orElse(new PertenenciasMarca());
+    }
 }

@@ -4,8 +4,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.CiudadanoDTO;
+import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
 import upc.edu.pe.gosecurity.dtos.NotixCiudadanoDTO;
 import upc.edu.pe.gosecurity.dtos.PoliciaDTO;
+import upc.edu.pe.gosecurity.entities.Ciudadano;
 import upc.edu.pe.gosecurity.entities.Policia;
 import upc.edu.pe.gosecurity.servicesInterfaces.IPoliciaService;
 
@@ -34,7 +37,18 @@ public class PoliciaController {
             return m.map(x, PoliciaDTO.class);
         }).collect(Collectors.toList());
     }
-
+    @GetMapping("/{id}")
+    public PoliciaDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        PoliciaDTO dto=m.map(pS.listId(id), PoliciaDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void Modificar(@RequestBody DenunciasDTO dto){
+        ModelMapper m = new ModelMapper();
+        Policia p=m.map(dto,Policia.class);
+        pS.insert(p);
+    }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         pS.delete(id);

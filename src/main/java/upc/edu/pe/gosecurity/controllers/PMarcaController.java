@@ -3,6 +3,7 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import upc.edu.pe.gosecurity.dtos.AyudaDTO;
 import upc.edu.pe.gosecurity.dtos.PMarcaDTO;
 import upc.edu.pe.gosecurity.entities.PertenenciasMarca;
 import upc.edu.pe.gosecurity.servicesInterfaces.PMarcaInterfaces;
@@ -30,6 +31,12 @@ public class PMarcaController {
         }).collect(Collectors.toList());
     }
 
+    @GetMapping("/{id}")
+    public PMarcaDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        PMarcaDTO dto=m.map(MarR.listId(id), PMarcaDTO.class);
+        return dto;
+    }
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id ){
         MarR.delete(id);

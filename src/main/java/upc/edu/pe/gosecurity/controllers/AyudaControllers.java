@@ -4,7 +4,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.AyudaDTO;
+import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
 import upc.edu.pe.gosecurity.entities.Ayuda;
+import upc.edu.pe.gosecurity.entities.Denuncias;
 import upc.edu.pe.gosecurity.servicesInterfaces.IAyudaService;
 
 import java.util.List;
@@ -27,6 +29,12 @@ public class AyudaControllers {
             ModelMapper m = new ModelMapper();
             return m.map(x, AyudaDTO.class);
         }).collect(Collectors.toList());
+    }
+    @GetMapping("/{id}")
+    public AyudaDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        AyudaDTO dto=m.map(aS.listId(id), AyudaDTO.class);
+        return dto;
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
