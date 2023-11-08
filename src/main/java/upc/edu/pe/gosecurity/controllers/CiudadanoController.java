@@ -3,11 +3,8 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import upc.edu.pe.gosecurity.dtos.AyudaDTO;
 import upc.edu.pe.gosecurity.dtos.CiudadanoDTO;
-import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
 import upc.edu.pe.gosecurity.entities.Ciudadano;
-import upc.edu.pe.gosecurity.entities.Denuncias;
 import upc.edu.pe.gosecurity.servicesInterfaces.ICiudadanoService;
 
 import java.util.List;
@@ -32,7 +29,7 @@ public class CiudadanoController {
         return dto;
     }
     @PutMapping
-    public void Modificar(@RequestBody DenunciasDTO dto){
+    public void Modificar(@RequestBody CiudadanoDTO dto){
         ModelMapper m = new ModelMapper();
         Ciudadano p=m.map(dto,Ciudadano.class);
         cS.insert(p);

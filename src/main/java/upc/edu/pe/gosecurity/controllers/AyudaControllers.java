@@ -4,9 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.gosecurity.dtos.AyudaDTO;
-import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
 import upc.edu.pe.gosecurity.entities.Ayuda;
-import upc.edu.pe.gosecurity.entities.Denuncias;
 import upc.edu.pe.gosecurity.servicesInterfaces.IAyudaService;
 
 import java.util.List;

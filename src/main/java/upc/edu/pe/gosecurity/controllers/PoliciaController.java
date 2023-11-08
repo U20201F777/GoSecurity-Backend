@@ -4,11 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import upc.edu.pe.gosecurity.dtos.CiudadanoDTO;
-import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
 import upc.edu.pe.gosecurity.dtos.NotixCiudadanoDTO;
 import upc.edu.pe.gosecurity.dtos.PoliciaDTO;
-import upc.edu.pe.gosecurity.entities.Ciudadano;
 import upc.edu.pe.gosecurity.entities.Policia;
 import upc.edu.pe.gosecurity.servicesInterfaces.IPoliciaService;
 
@@ -44,7 +41,7 @@ public class PoliciaController {
         return dto;
     }
     @PutMapping
-    public void Modificar(@RequestBody DenunciasDTO dto){
+    public void Modificar(@RequestBody PoliciaDTO dto){
         ModelMapper m = new ModelMapper();
         Policia p=m.map(dto,Policia.class);
         pS.insert(p);

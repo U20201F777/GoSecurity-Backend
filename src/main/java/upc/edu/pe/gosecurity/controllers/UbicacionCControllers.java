@@ -4,8 +4,6 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import upc.edu.pe.gosecurity.dtos.DenunciasDTO;
-import upc.edu.pe.gosecurity.dtos.PModeloDTO;
 import upc.edu.pe.gosecurity.dtos.UbicacionCDTO;
 import upc.edu.pe.gosecurity.entities.UbicacionC;
 import upc.edu.pe.gosecurity.servicesInterfaces.IUbicacionCService;

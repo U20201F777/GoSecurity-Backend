@@ -3,7 +3,6 @@ package upc.edu.pe.gosecurity.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import upc.edu.pe.gosecurity.dtos.AyudaDTO;
 import upc.edu.pe.gosecurity.dtos.PMarcaDTO;
 import upc.edu.pe.gosecurity.entities.PertenenciasMarca;
 import upc.edu.pe.gosecurity.servicesInterfaces.PMarcaInterfaces;

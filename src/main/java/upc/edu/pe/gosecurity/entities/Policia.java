@@ -19,11 +19,9 @@ public class Policia {
     @OneToOne
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
-
     @ManyToOne
     @JoinColumn(name = "idNotificacion")
     private Notificacion idNotificacion;
-
     @ManyToOne
     @JoinColumn(name = "idComisaria")
     private Comisaria idComisaria;
