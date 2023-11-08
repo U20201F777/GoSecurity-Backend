@@ -2,7 +2,7 @@ package upc.edu.pe.gosecurity.dtos;
 
 import upc.edu.pe.gosecurity.entities.Comisaria;
 import upc.edu.pe.gosecurity.entities.Notificacion;
-import upc.edu.pe.gosecurity.entities.Usuario;
+import upc.edu.pe.gosecurity.entities.Users;
 
 public class PoliciaDTO {
     private int idPolicia;
@@ -10,7 +10,7 @@ public class PoliciaDTO {
     private String fotoRostroPolicia;
     private String fotoIdentPolicia;
     private String rangoPolicia;
-    private Usuario usuario;
+    private Users usuario;
     private Notificacion idNotificacion;
     private Comisaria idComisaria;
 
@@ -54,11 +54,11 @@ public class PoliciaDTO {
         this.rangoPolicia = rangoPolicia;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 

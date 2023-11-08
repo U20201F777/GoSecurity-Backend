@@ -18,7 +18,7 @@ public class Policia {
     private String rangoPolicia;
     @OneToOne
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
+    private Users usuario;
     @ManyToOne
     @JoinColumn(name = "idNotificacion")
     private Notificacion idNotificacion;
@@ -29,7 +29,7 @@ public class Policia {
     public Policia() {
     }
 
-    public Policia(int idPolicia, String numeroPlacaPolicia, String fotoRostroPolicia, String fotoIdentPolicia, String rangoPolicia, Usuario usuario, Notificacion idNotificacion, Comisaria idComisaria) {
+    public Policia(int idPolicia, String numeroPlacaPolicia, String fotoRostroPolicia, String fotoIdentPolicia, String rangoPolicia, Users usuario, Notificacion idNotificacion, Comisaria idComisaria) {
         this.idPolicia = idPolicia;
         this.numeroPlacaPolicia = numeroPlacaPolicia;
         this.fotoRostroPolicia = fotoRostroPolicia;
@@ -80,11 +80,11 @@ public class Policia {
         this.rangoPolicia = rangoPolicia;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 

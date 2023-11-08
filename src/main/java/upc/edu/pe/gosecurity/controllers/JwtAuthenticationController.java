@@ -1,5 +1,4 @@
 package upc.edu.pe.gosecurity.controllers;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,7 +14,6 @@ import upc.edu.pe.gosecurity.security.JwtRequest;
 import upc.edu.pe.gosecurity.security.JwtResponse;
 import upc.edu.pe.gosecurity.security.JwtTokenUtil;
 import upc.edu.pe.gosecurity.serviceImplements.JwtUserDetailsService;
-
 
 //Clase 3
 @RestController

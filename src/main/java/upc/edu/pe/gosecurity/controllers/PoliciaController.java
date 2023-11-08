@@ -59,7 +59,7 @@ public class PoliciaController {
         }).collect(Collectors.toList());
     }
     @GetMapping("/NotixCiudadano")
-    @PreAuthorize("hasAnyAuthority('POLICIA')")
+    @PreAuthorize("hasAuthority('POLICIA')")
     public List<NotixCiudadanoDTO> NotificacionxCiudadano(){
         List<String[]> lista=pS.finByDescripcionNotixCiudadano();
         List<NotixCiudadanoDTO> listaDTO=new ArrayList<>();

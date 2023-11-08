@@ -7,21 +7,34 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import upc.edu.pe.gosecurity.entities.Usuario;
-import upc.edu.pe.gosecurity.repositories.IUsuarioRepository;
+import upc.edu.pe.gosecurity.entities.Users;
+import upc.edu.pe.gosecurity.repositories.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 //Clase 2
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
-    private IUsuarioRepository repo;
+    private UserRepository repo;
 
+    /*@Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        //Aqui lógica para buscar el usuario en BD
+        //Usuario defecto web:password
+
+        if ("web".equals(username)) {
+            return new User("web", "$2a$12$CTtjF8P3IJVK6pP4w9pTxuldMqQRrfrLbLLIlasdu2K6ii2vWGly2",
+                    new ArrayList<>());
+        } else {
+            throw new UsernameNotFoundException("Usuario no encontrado: " + username);
+        }
+    }*/
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario user = repo.findByUsername(username);
+        Users user = repo.findByUsername(username);
 
         if(user == null) {
             throw new UsernameNotFoundException(String.format("User not exists", username));

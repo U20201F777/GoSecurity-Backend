@@ -12,12 +12,12 @@ public class Ciudadano {
     private String numeroCiudadano;
     @OneToOne
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
+    private Users usuario;
 
     public Ciudadano() {
     }
 
-    public Ciudadano(int idCiudadano, String numeroCiudadano, Usuario usuario) {
+    public Ciudadano(int idCiudadano, String numeroCiudadano, Users usuario) {
         this.idCiudadano = idCiudadano;
         this.numeroCiudadano = numeroCiudadano;
         this.usuario = usuario;
@@ -39,11 +39,11 @@ public class Ciudadano {
         this.numeroCiudadano = numeroCiudadano;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 }

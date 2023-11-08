@@ -1,11 +1,11 @@
 package upc.edu.pe.gosecurity.dtos;
 
-import upc.edu.pe.gosecurity.entities.Usuario;
+import upc.edu.pe.gosecurity.entities.Users;
 
 public class CiudadanoDTO {
     private int idCiudadano;
     private String numeroCiudadano;
-    private Usuario usuario;
+    private Users usuario;
 
     public int getIdCiudadano() {
         return idCiudadano;
@@ -23,11 +23,11 @@ public class CiudadanoDTO {
         this.numeroCiudadano = numeroCiudadano;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 }
