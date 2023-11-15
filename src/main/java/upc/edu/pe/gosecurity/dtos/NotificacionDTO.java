@@ -3,15 +3,15 @@ package upc.edu.pe.gosecurity.dtos;
 import upc.edu.pe.gosecurity.entities.TipoCaso;
 
 public class NotificacionDTO {
-    private int idNotificación;
+    private int idNotificacion;
     private TipoCaso idTipoCaso;
 
-    public int getIdNotificación() {
-        return idNotificación;
+    public int getIdNotificacion() {
+        return idNotificacion;
     }
 
-    public void setIdNotificación(int idNotificación) {
-        this.idNotificación = idNotificación;
+    public void setIdNotificacion(int idNotificacion) {
+        this.idNotificacion = idNotificacion;
     }
 
     public TipoCaso getIdTipoCaso() {

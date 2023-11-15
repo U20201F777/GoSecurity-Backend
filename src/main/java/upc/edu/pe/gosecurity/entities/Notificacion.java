@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Notificacion {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private int idNotificación;
+   private int idNotificacion;
    @ManyToOne
    @JoinColumn(name = "idTipoCaso")
    private TipoCaso idTipoCaso;
@@ -15,17 +15,17 @@ public class Notificacion {
     public Notificacion() {
     }
 
-    public Notificacion(int idNotificación, TipoCaso idTipoCaso) {
-        this.idNotificación = idNotificación;
+    public Notificacion(int idNotificacion, TipoCaso idTipoCaso) {
+        this.idNotificacion = idNotificacion;
         this.idTipoCaso = idTipoCaso;
     }
 
-    public int getIdNotificación() {
-        return idNotificación;
+    public int getIdNotificacion() {
+        return idNotificacion;
     }
 
-    public void setIdNotificación(int idNotificación) {
-        this.idNotificación = idNotificación;
+    public void setIdNotificacion(int idNotificacion) {
+        this.idNotificacion = idNotificacion;
     }
 
     public TipoCaso getIdTipoCaso() {
