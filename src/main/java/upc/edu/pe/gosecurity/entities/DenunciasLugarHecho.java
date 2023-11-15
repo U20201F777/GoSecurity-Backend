@@ -7,14 +7,14 @@ public class DenunciasLugarHecho {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDenunciasLugarHecho;
-    @Column(name = "nameDenunciasLugarHecho",length = 100,nullable=false)
+    @Column(name = "lugarhecho",length = 100,nullable=false)
     private String nameDenunciasLugarHecho;
-    @Column(name = "distritoDenuncia", length = 100, nullable = false)
-    private String distritoDenuncia;
-    @Column(name = "provinciaDenuncia", length = 100, nullable = false)
-    private String provinciaDenuncia;
-    @Column(name = "lugarDenuncia", length = 100, nullable = false)
-    private String lugarDenuncia;
+    @Column(name = "Denuncia", length = 100, nullable = false)
+    private String DistritoDenuncia;
+    @Column(name = "Provincia", length = 100, nullable = false)
+    private String ProvinciaDenuncia;
+    @Column(name = "Lugar", length = 100, nullable = false)
+    private String LugarDenuncia;
 
     public DenunciasLugarHecho() {
     }
@@ -22,9 +22,9 @@ public class DenunciasLugarHecho {
     public DenunciasLugarHecho(int idDenunciasLugarHecho, String nameDenunciasLugarHecho, String distritoDenuncia, String provinciaDenuncia, String lugarDenuncia) {
         this.idDenunciasLugarHecho = idDenunciasLugarHecho;
         this.nameDenunciasLugarHecho = nameDenunciasLugarHecho;
-        this.distritoDenuncia = distritoDenuncia;
-        this.provinciaDenuncia = provinciaDenuncia;
-        this.lugarDenuncia = lugarDenuncia;
+        DistritoDenuncia = distritoDenuncia;
+        ProvinciaDenuncia = provinciaDenuncia;
+        LugarDenuncia = lugarDenuncia;
     }
 
     public int getIdDenunciasLugarHecho() {
@@ -44,26 +44,26 @@ public class DenunciasLugarHecho {
     }
 
     public String getDistritoDenuncia() {
-        return distritoDenuncia;
+        return DistritoDenuncia;
     }
 
     public void setDistritoDenuncia(String distritoDenuncia) {
-        this.distritoDenuncia = distritoDenuncia;
+        DistritoDenuncia = distritoDenuncia;
     }
 
     public String getProvinciaDenuncia() {
-        return provinciaDenuncia;
+        return ProvinciaDenuncia;
     }
 
     public void setProvinciaDenuncia(String provinciaDenuncia) {
-        this.provinciaDenuncia = provinciaDenuncia;
+        ProvinciaDenuncia = provinciaDenuncia;
     }
 
     public String getLugarDenuncia() {
-        return lugarDenuncia;
+        return LugarDenuncia;
     }
 
     public void setLugarDenuncia(String lugarDenuncia) {
-        this.lugarDenuncia = lugarDenuncia;
+        LugarDenuncia = lugarDenuncia;
     }
 }

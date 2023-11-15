@@ -33,7 +33,8 @@ public class IComisariaImplements implements IComisariaService {
     }
 
     @Override
-    public List<String[]> comisariaPolicia() {
-        return cR.comisariaPolicia();
+    public List<String[]> FindByDenunciasComisariaPolicia() {
+        return cR.FindByDenunciasComisariaPolicia();
     }
+
 }

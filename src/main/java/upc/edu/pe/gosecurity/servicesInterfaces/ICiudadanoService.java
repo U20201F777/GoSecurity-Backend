@@ -9,5 +9,5 @@ public interface ICiudadanoService {
     public List<Ciudadano> list();
     public Ciudadano listId(int idCiudadano);
     public void delete(int idCiudadano);
-    List<Ciudadano> findByNumeroCiudadano(int dniCiudadano);
+    List<Ciudadano> findByNumeroCiudadano(String dniCiudadano);
 }

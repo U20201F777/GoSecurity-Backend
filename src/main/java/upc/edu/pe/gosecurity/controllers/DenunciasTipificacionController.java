@@ -22,22 +22,21 @@ public class DenunciasTipificacionController {
         pS.insert(d);
 
     }
-    @PutMapping
-    public void Modificar(@RequestBody DenunciasTipificacionDTO dto){
-        ModelMapper m = new ModelMapper();
-        DenunciasTipificacion p=m.map(dto,DenunciasTipificacion.class);
-        pS.insert(p);
-    }
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer id){
-        pS.delete(id);
-    }
-
     @GetMapping
     public List<DenunciasTipificacionDTO> Listar(){
         return pS.LIST().stream().map(x->{
             ModelMapper m=new ModelMapper();
             return m.map(x, DenunciasTipificacionDTO.class);
         }).collect(Collectors.toList());
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        pS.delete(id);
+    }
+    @PutMapping
+    public void Modificar(@RequestBody DenunciasTipificacionDTO dto){
+        ModelMapper m = new ModelMapper();
+        DenunciasTipificacion p=m.map(dto,DenunciasTipificacion.class);
+        pS.insert(p);
     }
 }

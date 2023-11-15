@@ -7,24 +7,24 @@ public class DenunciasTipificacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDenunciasTipificacion;
-    @Column(name = "nameDenunciasTipificacion",length = 100,nullable=false)
+    @Column(name = "tipificacion",length = 100,nullable=false)
     private String nameDenunciasTipificacion;
-    @Column(name = "tipoDenuncia", length = 100, nullable = false)
-    private String tipoDenuncia;
-    @Column(name = "modalidadDenuncia", length = 100, nullable = false)
-    private String modalidadDenuncia;
-    @Column(name = "subtipoDenuncia", length = 100, nullable = false)
-    private String subtipoDenuncia;
+    @Column(name = "Tipo_t", length = 100, nullable = false)
+    private String Tipo_tDenuncia;
+    @Column(name = "Modalidad", length = 100, nullable = false)
+    private String ModalidadDenuncia;
+    @Column(name = "Subtipo", length = 100, nullable = false)
+    private String SubtipoDenuncia;
 
     public DenunciasTipificacion() {
     }
 
-    public DenunciasTipificacion(int idDenunciasTipificacion, String nameDenunciasTipificacion, String tipoDenuncia, String modalidadDenuncia, String subtipoDenuncia) {
+    public DenunciasTipificacion(int idDenunciasTipificacion, String nameDenunciasTipificacion, String tipo_tDenuncia, String modalidadDenuncia, String subtipoDenuncia) {
         this.idDenunciasTipificacion = idDenunciasTipificacion;
         this.nameDenunciasTipificacion = nameDenunciasTipificacion;
-        this.tipoDenuncia = tipoDenuncia;
-        this.modalidadDenuncia = modalidadDenuncia;
-        this.subtipoDenuncia = subtipoDenuncia;
+        Tipo_tDenuncia = tipo_tDenuncia;
+        ModalidadDenuncia = modalidadDenuncia;
+        SubtipoDenuncia = subtipoDenuncia;
     }
 
     public int getIdDenunciasTipificacion() {
@@ -43,27 +43,27 @@ public class DenunciasTipificacion {
         this.nameDenunciasTipificacion = nameDenunciasTipificacion;
     }
 
-    public String getTipoDenuncia() {
-        return tipoDenuncia;
+    public String getTipo_tDenuncia() {
+        return Tipo_tDenuncia;
     }
 
-    public void setTipoDenuncia(String tipoDenuncia) {
-        this.tipoDenuncia = tipoDenuncia;
+    public void setTipo_tDenuncia(String tipo_tDenuncia) {
+        Tipo_tDenuncia = tipo_tDenuncia;
     }
 
     public String getModalidadDenuncia() {
-        return modalidadDenuncia;
+        return ModalidadDenuncia;
     }
 
     public void setModalidadDenuncia(String modalidadDenuncia) {
-        this.modalidadDenuncia = modalidadDenuncia;
+        ModalidadDenuncia = modalidadDenuncia;
     }
 
     public String getSubtipoDenuncia() {
-        return subtipoDenuncia;
+        return SubtipoDenuncia;
     }
 
     public void setSubtipoDenuncia(String subtipoDenuncia) {
-        this.subtipoDenuncia = subtipoDenuncia;
+        SubtipoDenuncia = subtipoDenuncia;
     }
 }

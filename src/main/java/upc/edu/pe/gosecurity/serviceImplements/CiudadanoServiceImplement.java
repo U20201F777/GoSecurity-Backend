@@ -24,17 +24,17 @@ public class CiudadanoServiceImplement implements ICiudadanoService {
     }
 
     @Override
-    public void delete(int idCiudadano) {
-        cR.deleteById(idCiudadano);
-    }
-
-    @Override
     public Ciudadano listId(int idCiudadano) {
         return cR.findById(idCiudadano).orElse(new Ciudadano());
     }
 
     @Override
-    public List<Ciudadano> findByNumeroCiudadano(int dniCiudadano) {
+    public void delete(int idCiudadano) {
+        cR.deleteById(idCiudadano);
+    }
+
+    @Override
+    public List<Ciudadano> findByNumeroCiudadano(String dniCiudadano) {
         return cR.findByNumeroCiudadano(dniCiudadano);
     }
 }

@@ -9,5 +9,5 @@ public interface IComisariaService {
     public List<Comisaria> list();
     public void delete(int idComisaria);
     public Comisaria listId(int idComisaria);
-    public List<String[]> comisariaPolicia();
+    public List<String[]> FindByDenunciasComisariaPolicia();
 }

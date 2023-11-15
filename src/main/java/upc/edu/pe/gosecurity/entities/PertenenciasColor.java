@@ -8,7 +8,7 @@ public class PertenenciasColor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPertenenciasColor;
-    @Column(name = "namePertenenciasColor",length = 100,nullable = false)
+    @Column(name = "Color",length = 100,nullable = false)
     private String namePertenenciasColor;
 
     public PertenenciasColor() {

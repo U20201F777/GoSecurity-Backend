@@ -3,9 +3,9 @@ package upc.edu.pe.gosecurity.dtos;
 public class DenunciasTipificacionDTO {
     private int idDenunciasTipificacion;
     private String nameDenunciasTipificacion;
-    private String tipoDenuncia;
-    private String modalidadDenuncia;
-    private String subtipoDenuncia;
+    private String Tipo_tDenuncia;
+    private String ModalidadDenuncia;
+    private String SubtipoDenuncia;
 
     public int getIdDenunciasTipificacion() {
         return idDenunciasTipificacion;
@@ -23,27 +23,27 @@ public class DenunciasTipificacionDTO {
         this.nameDenunciasTipificacion = nameDenunciasTipificacion;
     }
 
-    public String getTipoDenuncia() {
-        return tipoDenuncia;
+    public String getTipo_tDenuncia() {
+        return Tipo_tDenuncia;
     }
 
-    public void setTipoDenuncia(String tipoDenuncia) {
-        this.tipoDenuncia = tipoDenuncia;
+    public void setTipo_tDenuncia(String tipo_tDenuncia) {
+        Tipo_tDenuncia = tipo_tDenuncia;
     }
 
     public String getModalidadDenuncia() {
-        return modalidadDenuncia;
+        return ModalidadDenuncia;
     }
 
     public void setModalidadDenuncia(String modalidadDenuncia) {
-        this.modalidadDenuncia = modalidadDenuncia;
+        ModalidadDenuncia = modalidadDenuncia;
     }
 
     public String getSubtipoDenuncia() {
-        return subtipoDenuncia;
+        return SubtipoDenuncia;
     }
 
     public void setSubtipoDenuncia(String subtipoDenuncia) {
-        this.subtipoDenuncia = subtipoDenuncia;
+        SubtipoDenuncia = subtipoDenuncia;
     }
 }

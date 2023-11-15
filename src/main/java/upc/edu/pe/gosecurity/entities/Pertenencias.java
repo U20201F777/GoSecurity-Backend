@@ -9,26 +9,30 @@ public class Pertenencias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPertenencias;
-    @Column(name = "namePertenencias",length = 100,nullable = false)
+    @Column(name = "Nombre_P",length = 100,nullable = false)
     private String namePertenencias;
-    @Column(name = "AnioPertenencias",nullable = false)
+    @Column(name = "Ano_antiguedad",nullable = false)
     private LocalDate AnioPertenencias;
-    @Column(name = "EspecificacionesPertenencias",length = 100,nullable = false)
+    @Column(name = "Especificaciones_ad",length = 100,nullable = false)
     private String EspecificacionesPertenencias;
-    @Column(name = "ImagenPertenencias",length = 100,nullable = false)
+    @Column(name = "Imagen_P",length = 100,nullable = false)
     private String ImagenPertenencias;
+    @Column(name = "Codigo_P",length = 100,nullable = false)
+    private String CodigoPertenencias;
+    @Column(name = "Serie",nullable = false)
+    private int SeriePertenencias;
     @ManyToOne
     @JoinColumn(name="idPertenenciasColor")
-    private PertenenciasColor idPertenenciasColor;
+    private PertenenciasColor pertenenciasColor;
     @ManyToOne
     @JoinColumn(name="idPertenenciasMarca")
-    private PertenenciasMarca idPertenenciasMarca;
+    private PertenenciasMarca pertenenciasMarca;
     @ManyToOne
     @JoinColumn(name="idPertenenciasModelo")
-    private PertenenciasModelo idPertenenciasModelo;
+    private PertenenciasModelo pertenenciasModelo;
     @ManyToOne
     @JoinColumn(name="idPerteneneciasTipo")
-    private PertenenciasTipo idPertenenciasTipo;
+    private PertenenciasTipo pertenenciasTipo;
     @ManyToOne
     @JoinColumn(name = "idCiudadano")
     private Ciudadano idCiudadano;
@@ -41,16 +45,18 @@ public class Pertenencias {
     public Pertenencias() {
     }
 
-    public Pertenencias(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, PertenenciasColor idPertenenciasColor, PertenenciasMarca idPertenenciasMarca, PertenenciasModelo idPertenenciasModelo, PertenenciasTipo idPertenenciasTipo, Ciudadano idCiudadano, UbicacionP idUbicacionP, Ayuda idAyuda) {
+    public Pertenencias(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, String codigoPertenencias, int seriePertenencias, PertenenciasColor pertenenciasColor, PertenenciasMarca pertenenciasMarca, PertenenciasModelo pertenenciasModelo, PertenenciasTipo pertenenciasTipo, Ciudadano idCiudadano, UbicacionP idUbicacionP, Ayuda idAyuda) {
         this.idPertenencias = idPertenencias;
         this.namePertenencias = namePertenencias;
         AnioPertenencias = anioPertenencias;
         EspecificacionesPertenencias = especificacionesPertenencias;
         ImagenPertenencias = imagenPertenencias;
-        this.idPertenenciasColor = idPertenenciasColor;
-        this.idPertenenciasMarca = idPertenenciasMarca;
-        this.idPertenenciasModelo = idPertenenciasModelo;
-        this.idPertenenciasTipo = idPertenenciasTipo;
+        CodigoPertenencias = codigoPertenencias;
+        SeriePertenencias = seriePertenencias;
+        this.pertenenciasColor = pertenenciasColor;
+        this.pertenenciasMarca = pertenenciasMarca;
+        this.pertenenciasModelo = pertenenciasModelo;
+        this.pertenenciasTipo = pertenenciasTipo;
         this.idCiudadano = idCiudadano;
         this.idUbicacionP = idUbicacionP;
         this.idAyuda = idAyuda;
@@ -96,36 +102,52 @@ public class Pertenencias {
         ImagenPertenencias = imagenPertenencias;
     }
 
-    public PertenenciasColor getIdPertenenciasColor() {
-        return idPertenenciasColor;
+    public String getCodigoPertenencias() {
+        return CodigoPertenencias;
     }
 
-    public void setIdPertenenciasColor(PertenenciasColor idPertenenciasColor) {
-        this.idPertenenciasColor = idPertenenciasColor;
+    public void setCodigoPertenencias(String codigoPertenencias) {
+        CodigoPertenencias = codigoPertenencias;
     }
 
-    public PertenenciasMarca getIdPertenenciasMarca() {
-        return idPertenenciasMarca;
+    public int getSeriePertenencias() {
+        return SeriePertenencias;
     }
 
-    public void setIdPertenenciasMarca(PertenenciasMarca idPertenenciasMarca) {
-        this.idPertenenciasMarca = idPertenenciasMarca;
+    public void setSeriePertenencias(int seriePertenencias) {
+        SeriePertenencias = seriePertenencias;
     }
 
-    public PertenenciasModelo getIdPertenenciasModelo() {
-        return idPertenenciasModelo;
+    public PertenenciasColor getPertenenciasColor() {
+        return pertenenciasColor;
     }
 
-    public void setIdPertenenciasModelo(PertenenciasModelo idPertenenciasModelo) {
-        this.idPertenenciasModelo = idPertenenciasModelo;
+    public void setPertenenciasColor(PertenenciasColor pertenenciasColor) {
+        this.pertenenciasColor = pertenenciasColor;
     }
 
-    public PertenenciasTipo getIdPertenenciasTipo() {
-        return idPertenenciasTipo;
+    public PertenenciasMarca getPertenenciasMarca() {
+        return pertenenciasMarca;
     }
 
-    public void setIdPertenenciasTipo(PertenenciasTipo idPertenenciasTipo) {
-        this.idPertenenciasTipo = idPertenenciasTipo;
+    public void setPertenenciasMarca(PertenenciasMarca pertenenciasMarca) {
+        this.pertenenciasMarca = pertenenciasMarca;
+    }
+
+    public PertenenciasModelo getPertenenciasModelo() {
+        return pertenenciasModelo;
+    }
+
+    public void setPertenenciasModelo(PertenenciasModelo pertenenciasModelo) {
+        this.pertenenciasModelo = pertenenciasModelo;
+    }
+
+    public PertenenciasTipo getPertenenciasTipo() {
+        return pertenenciasTipo;
+    }
+
+    public void setPertenenciasTipo(PertenenciasTipo pertenenciasTipo) {
+        this.pertenenciasTipo = pertenenciasTipo;
     }
 
     public Ciudadano getIdCiudadano() {

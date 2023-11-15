@@ -21,16 +21,6 @@ public class UbicacionPControllers {
         UbicacionP p=m.map(dto, UbicacionP.class);
         uS.insert(p);
     }
-    @PutMapping
-    public void modificar(@RequestBody UbicacionPDTO dto){
-        ModelMapper m = new ModelMapper();
-        UbicacionP u = m.map(dto,UbicacionP.class);
-        uS.insert(u);
-    }
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
-        uS.delete(id);
-    }
     @GetMapping
     public List<UbicacionPDTO> list() {
         return uS.list().stream().map(x -> {
@@ -38,4 +28,16 @@ public class UbicacionPControllers {
             return m.map(x, UbicacionPDTO.class);
         }).collect(Collectors.toList());
     }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        uS.delete(id);
+    }
+
+    @PutMapping
+    public void modificar(@RequestBody UbicacionPDTO dto){
+        ModelMapper m = new ModelMapper();
+        UbicacionP u = m.map(dto,UbicacionP.class);
+        uS.insert(u);
+    }
+
 }
