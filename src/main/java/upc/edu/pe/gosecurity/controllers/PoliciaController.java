@@ -9,6 +9,7 @@ import upc.edu.pe.gosecurity.dtos.PoliciaDTO;
 import upc.edu.pe.gosecurity.entities.Policia;
 import upc.edu.pe.gosecurity.servicesInterfaces.IPoliciaService;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,20 +27,6 @@ public class PoliciaController {
         Policia p = m.map(dto, Policia.class);
         pS.insert(p);
     }
-
-    @GetMapping
-    public List<PoliciaDTO> listar() {
-        return pS.list().stream().map(x -> {
-            ModelMapper m = new ModelMapper();
-            return m.map(x, PoliciaDTO.class);
-        }).collect(Collectors.toList());
-    }
-    @GetMapping("/{id}")
-    public PoliciaDTO listaId(@PathVariable("id") Integer id){
-        ModelMapper m= new ModelMapper();
-        PoliciaDTO dto=m.map(pS.listId(id), PoliciaDTO.class);
-        return dto;
-    }
     @PutMapping
     public void Modificar(@RequestBody PoliciaDTO dto){
         ModelMapper m = new ModelMapper();
@@ -50,7 +37,19 @@ public class PoliciaController {
     public void delete(@PathVariable("id") Integer id) {
         pS.delete(id);
     }
-
+    @GetMapping("/{id}")
+    public PoliciaDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        PoliciaDTO dto=m.map(pS.listId(id), PoliciaDTO.class);
+        return dto;
+    }
+    @GetMapping
+    public List<PoliciaDTO> listar() {
+        return pS.list().stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, PoliciaDTO.class);
+        }).collect(Collectors.toList());
+    }
     @PostMapping("/buscarPlaca")
     public List<PoliciaDTO> buscarPlaca(@RequestBody String placa) {
         return pS.findByNumeroPlacaPolicia(placa).stream().map(x -> {
@@ -58,18 +57,17 @@ public class PoliciaController {
             return m.map(x, PoliciaDTO.class);
         }).collect(Collectors.toList());
     }
-    @GetMapping("/NotixCiudadano")
-    @PreAuthorize("hasAuthority('POLICIA')")
-    public List<NotixCiudadanoDTO> NotificacionxCiudadano(){
-        List<String[]> lista=pS.finByDescripcionNotixCiudadano();
+    @GetMapping("/Solicitudes")
+    @PreAuthorize("hasAuthority('POLICIA') or hasAuthority('ADMIN')")
+    public List<NotixCiudadanoDTO> solicitudNoAtendida(){
+        List<String[]> lista=pS.casosPorTipo();
         List<NotixCiudadanoDTO> listaDTO=new ArrayList<>();
         for (String[] data:lista){
             NotixCiudadanoDTO dto= new NotixCiudadanoDTO();
-            dto.setTipo_caso(data[0]);
-            dto.setDNIciudadano(Integer.parseInt(data[1]));
-            dto.setNombreP(data[2]);
-            dto.setNombreDescripción(data[3]);
-            dto.setIdnotificacion(Integer.parseInt(data[4]));
+            dto.setDniCiudadano(data[0]);
+            dto.setNombrePertenencia(data[1]);
+            dto.setCantAtendido(Integer.parseInt(data[2]));
+            dto.setCantNoAtendido(Integer.parseInt(data[3]));
             listaDTO.add(dto);
         }
         return listaDTO;

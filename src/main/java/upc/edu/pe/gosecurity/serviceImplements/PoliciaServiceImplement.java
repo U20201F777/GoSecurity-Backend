@@ -39,7 +39,7 @@ public class PoliciaServiceImplement implements IPoliciaService {
     }
 
     @Override
-    public List<String[]> finByDescripcionNotixCiudadano() {
-        return pR.finByDescripcionNotixCiudadano();
+    public List<String[]> casosPorTipo() {
+        return pR.casosPorTipo();
     }
 }

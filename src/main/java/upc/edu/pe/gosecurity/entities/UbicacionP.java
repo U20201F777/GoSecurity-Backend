@@ -12,26 +12,26 @@ public class UbicacionP {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUbicacionP;
-    @Column(name = "Latitud", length = 50, nullable = false)
-    private int Latitud;
-    @Column(name = "Logitud", length = 50, nullable = false)
-    private int Longitud;
-    @Column(name = "Fecha", nullable = false)
-    private LocalDate Fecha;
+    @Column(name = "latitud", length = 50, nullable = false)
+    private int latitud;
+    @Column(name = "logitud", length = 50, nullable = false)
+    private int longitud;
+    @Column(name = "fecha", nullable = false)
+    private LocalDate fecha;
     @ManyToOne
     @JoinColumn(name = "idEstadoUbicacion")
-    private EstadoUbicacion estadoUbicacion;
+    private EstadoUbicacion idEstadoUbicacion;
 
 
     public UbicacionP() {
     }
 
-    public UbicacionP(int idUbicacionP, int latitud, int longitud, LocalDate fecha, EstadoUbicacion estadoUbicacion) {
+    public UbicacionP(int idUbicacionP, int latitud, int longitud, LocalDate fecha, EstadoUbicacion idEstadoUbicacion) {
         this.idUbicacionP = idUbicacionP;
-        Latitud = latitud;
-        Longitud = longitud;
-        Fecha = fecha;
-        this.estadoUbicacion = estadoUbicacion;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.fecha = fecha;
+        this.idEstadoUbicacion = idEstadoUbicacion;
     }
 
     public int getIdUbicacionP() {
@@ -43,34 +43,34 @@ public class UbicacionP {
     }
 
     public int getLatitud() {
-        return Latitud;
+        return latitud;
     }
 
     public void setLatitud(int latitud) {
-        Latitud = latitud;
+        this.latitud = latitud;
     }
 
     public int getLongitud() {
-        return Longitud;
+        return longitud;
     }
 
     public void setLongitud(int longitud) {
-        Longitud = longitud;
+        this.longitud = longitud;
     }
 
     public LocalDate getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 
-    public EstadoUbicacion getEstadoUbicacion() {
-        return estadoUbicacion;
+    public EstadoUbicacion getIdEstadoUbicacion() {
+        return idEstadoUbicacion;
     }
 
-    public void setEstadoUbicacion(EstadoUbicacion estadoUbicacion) {
-        this.estadoUbicacion = estadoUbicacion;
+    public void setIdEstadoUbicacion(EstadoUbicacion idEstadoUbicacion) {
+        this.idEstadoUbicacion = idEstadoUbicacion;
     }
 }

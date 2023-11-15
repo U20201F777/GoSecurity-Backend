@@ -24,12 +24,15 @@ public class UbicacionCControllers {
         UbicacionC u =m.map(dto, UbicacionC.class);
         uS.insert(u);
     }
-    @GetMapping
-    public List<UbicacionCDTO> list() {
-        return uS.list().stream().map(x -> {
-            ModelMapper m = new ModelMapper();
-            return m.map(x, UbicacionCDTO.class);
-        }).collect(Collectors.toList());
+    @PutMapping
+    public void modificar(@RequestBody UbicacionCDTO dto){
+        ModelMapper m = new ModelMapper();
+        UbicacionC u = m.map(dto,UbicacionC.class);
+        uS.insert(u);
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        uS.delete(id);
     }
     @GetMapping("/{id}")
     public UbicacionCDTO listaId(@PathVariable("id") Integer id){
@@ -37,16 +40,11 @@ public class UbicacionCControllers {
         UbicacionCDTO dto=m.map(uS.listId(id), UbicacionCDTO.class);
         return dto;
     }
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
-        uS.delete(id);
+    @GetMapping
+    public List<UbicacionCDTO> list() {
+        return uS.list().stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, UbicacionCDTO.class);
+        }).collect(Collectors.toList());
     }
-
-    @PutMapping
-    public void modificar(@RequestBody UbicacionCDTO dto){
-        ModelMapper m = new ModelMapper();
-        UbicacionC u = m.map(dto,UbicacionC.class);
-        uS.insert(u);
-    }
-
 }

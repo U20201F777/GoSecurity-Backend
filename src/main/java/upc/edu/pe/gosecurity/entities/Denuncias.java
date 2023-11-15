@@ -10,14 +10,14 @@ public class Denuncias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDenuncias;
-    @Column(name = "Nombre", length = 100, nullable = false)
+    @Column(name = "nameDenuncias", length = 100, nullable = false)
     private String nameDenuncias;
-    @Column(name = "Fecha_Hechos", nullable = false)
-    private LocalDate FechaDenunciasHechos;
-    @Column(name = "Fecha_Registro", nullable = false)
-    private LocalDate FechaDenunciasRegistro;
-    @Column(name = "Fecha_Emision", nullable = false)
-    private LocalDate FechaDenunciasEmision;
+    @Column(name = "fechaDenunciasHechos", nullable = false)
+    private LocalDate fechaDenunciasHechos;
+    @Column(name = "fechaDenunciasRegistro", nullable = false)
+    private LocalDate fechaDenunciasRegistro;
+    @Column(name = "fechaDenunciasEmision", nullable = false)
+    private LocalDate fechaDenunciasEmision;
     @ManyToOne
     @JoinColumn(name = "idDenunciasLugarHecho")
     private DenunciasLugarHecho idDenunciasLugarHecho;
@@ -36,9 +36,9 @@ public class Denuncias {
     public Denuncias(int idDenuncias, String nameDenuncias, LocalDate fechaDenunciasHechos, LocalDate fechaDenunciasRegistro, LocalDate fechaDenunciasEmision, DenunciasLugarHecho idDenunciasLugarHecho, DenunciasTipificacion idDenunciasTipificacion, Ciudadano idCiudadano, Comisaria idComisaria) {
         this.idDenuncias = idDenuncias;
         this.nameDenuncias = nameDenuncias;
-        FechaDenunciasHechos = fechaDenunciasHechos;
-        FechaDenunciasRegistro = fechaDenunciasRegistro;
-        FechaDenunciasEmision = fechaDenunciasEmision;
+        this.fechaDenunciasHechos = fechaDenunciasHechos;
+        this.fechaDenunciasRegistro = fechaDenunciasRegistro;
+        this.fechaDenunciasEmision = fechaDenunciasEmision;
         this.idDenunciasLugarHecho = idDenunciasLugarHecho;
         this.idDenunciasTipificacion = idDenunciasTipificacion;
         this.idCiudadano = idCiudadano;
@@ -62,27 +62,27 @@ public class Denuncias {
     }
 
     public LocalDate getFechaDenunciasHechos() {
-        return FechaDenunciasHechos;
+        return fechaDenunciasHechos;
     }
 
     public void setFechaDenunciasHechos(LocalDate fechaDenunciasHechos) {
-        FechaDenunciasHechos = fechaDenunciasHechos;
+        this.fechaDenunciasHechos = fechaDenunciasHechos;
     }
 
     public LocalDate getFechaDenunciasRegistro() {
-        return FechaDenunciasRegistro;
+        return fechaDenunciasRegistro;
     }
 
     public void setFechaDenunciasRegistro(LocalDate fechaDenunciasRegistro) {
-        FechaDenunciasRegistro = fechaDenunciasRegistro;
+        this.fechaDenunciasRegistro = fechaDenunciasRegistro;
     }
 
     public LocalDate getFechaDenunciasEmision() {
-        return FechaDenunciasEmision;
+        return fechaDenunciasEmision;
     }
 
     public void setFechaDenunciasEmision(LocalDate fechaDenunciasEmision) {
-        FechaDenunciasEmision = fechaDenunciasEmision;
+        this.fechaDenunciasEmision = fechaDenunciasEmision;
     }
 
     public DenunciasLugarHecho getIdDenunciasLugarHecho() {
@@ -117,6 +117,3 @@ public class Denuncias {
         this.idComisaria = idComisaria;
     }
 }
-
-
-

@@ -19,8 +19,6 @@ public class EstadoUbicacionControllers {
         EstadoUbicacion p=m.map(dto, EstadoUbicacion.class);
         eS.insert(p);
     }
-
-
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         eS.delete(id);

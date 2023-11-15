@@ -3,9 +3,9 @@ package upc.edu.pe.gosecurity.dtos;
 public class DenunciasLugarHechoDTO {
     private int idDenunciasLugarHecho;
     private String nameDenunciasLugarHecho;
-    private String DistritoDenuncia;
-    private String ProvinciaDenuncia;
-    private String LugarDenuncia;
+    private String distritoDenuncia;
+    private String provinciaDenuncia;
+    private String lugarDenuncia;
 
     public int getIdDenunciasLugarHecho() {
         return idDenunciasLugarHecho;
@@ -24,26 +24,26 @@ public class DenunciasLugarHechoDTO {
     }
 
     public String getDistritoDenuncia() {
-        return DistritoDenuncia;
+        return distritoDenuncia;
     }
 
     public void setDistritoDenuncia(String distritoDenuncia) {
-        DistritoDenuncia = distritoDenuncia;
+        this.distritoDenuncia = distritoDenuncia;
     }
 
     public String getProvinciaDenuncia() {
-        return ProvinciaDenuncia;
+        return provinciaDenuncia;
     }
 
     public void setProvinciaDenuncia(String provinciaDenuncia) {
-        ProvinciaDenuncia = provinciaDenuncia;
+        this.provinciaDenuncia = provinciaDenuncia;
     }
 
     public String getLugarDenuncia() {
-        return LugarDenuncia;
+        return lugarDenuncia;
     }
 
     public void setLugarDenuncia(String lugarDenuncia) {
-        LugarDenuncia = lugarDenuncia;
+        this.lugarDenuncia = lugarDenuncia;
     }
 }
