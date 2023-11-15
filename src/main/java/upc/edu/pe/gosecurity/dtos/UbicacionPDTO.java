@@ -9,11 +9,11 @@ public class UbicacionPDTO {
 
     private int idUbicacionP;
 
-    private int latitud;
+    private int Latitud;
 
-    private int longitud;
+    private int Longitud;
 
-    private LocalDate fecha;
+    private LocalDate Fecha;
 
     private EstadoUbicacion estadoUbicacion;
 
@@ -25,36 +25,28 @@ public class UbicacionPDTO {
         this.idUbicacionP = idUbicacionP;
     }
 
-    public int getIdUbicacionP() {
-        return idUbicacionP;
-    }
-
-    public void setIdUbicacionP(int idUbicacionP) {
-        this.idUbicacionP = idUbicacionP;
-    }
-
     public int getLatitud() {
-        return latitud;
+        return Latitud;
     }
 
     public void setLatitud(int latitud) {
-        this.latitud = latitud;
+        Latitud = latitud;
     }
 
     public int getLongitud() {
-        return longitud;
+        return Longitud;
     }
 
     public void setLongitud(int longitud) {
-        this.longitud = longitud;
+        Longitud = longitud;
     }
 
     public LocalDate getFecha() {
-        return fecha;
+        return Fecha;
     }
 
     public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+        Fecha = fecha;
     }
 
     public EstadoUbicacion getEstadoUbicacion() {

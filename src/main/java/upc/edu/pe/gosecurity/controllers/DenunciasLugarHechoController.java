@@ -23,17 +23,6 @@ public class DenunciasLugarHechoController {
         DenunciasLugarHecho d=m.map(dto, DenunciasLugarHecho.class);
         pS.insert(d);
     }
-    @PutMapping
-    public void Modificar(@RequestBody DenunciasLugarHechoDTO dto){
-        ModelMapper m = new ModelMapper();
-        DenunciasLugarHecho p=m.map(dto,DenunciasLugarHecho.class);
-        pS.insert(p);
-    }
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer id){
-        pS.delete(id);
-    }
-
     @GetMapping("/{id}")
     public DenunciasLugarHechoDTO listaId(@PathVariable("id") Integer id){
         ModelMapper m= new ModelMapper();
@@ -47,5 +36,14 @@ public class DenunciasLugarHechoController {
             return m.map(x,DenunciasLugarHechoDTO.class);
         }).collect(Collectors.toList());
     }
-
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        pS.delete(id);
+    }
+    @PutMapping
+    public void Modificar(@RequestBody DenunciasLugarHechoDTO dto){
+        ModelMapper m = new ModelMapper();
+        DenunciasLugarHecho p=m.map(dto,DenunciasLugarHecho.class);
+        pS.insert(p);
+    }
 }

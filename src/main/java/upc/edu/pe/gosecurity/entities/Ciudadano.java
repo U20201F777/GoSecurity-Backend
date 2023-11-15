@@ -10,6 +10,9 @@ public class Ciudadano {
     private int idCiudadano;
     @Column(name = "numeroCiudadano", length = 9,nullable = false)
     private String numeroCiudadano;
+    /*@OneToOne
+    @JoinColumn(name = "idUsuario")
+    private Users usuario;*/
 
     public Ciudadano() {
     }
@@ -17,6 +20,7 @@ public class Ciudadano {
     public Ciudadano(int idCiudadano, String numeroCiudadano) {
         this.idCiudadano = idCiudadano;
         this.numeroCiudadano = numeroCiudadano;
+        //this.usuario = usuario;
     }
 
     public int getIdCiudadano() {

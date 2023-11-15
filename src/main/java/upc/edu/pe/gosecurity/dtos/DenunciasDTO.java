@@ -10,9 +10,9 @@ import java.time.LocalDate;
 public class DenunciasDTO {
     private int idDenuncias;
     private String nameDenuncias;
-    private LocalDate fechaDenunciasHechos;
-    private LocalDate fechaDenunciasRegistro;
-    private LocalDate fechaDenunciasEmision;
+    private LocalDate FechaDenunciasHechos;
+    private LocalDate FechaDenunciasRegistro;
+    private LocalDate FechaDenunciasEmision;
     private DenunciasLugarHecho idDenunciasLugarHecho;
     private DenunciasTipificacion idDenunciasTipificacion;
     private Ciudadano idCiudadano;
@@ -35,27 +35,27 @@ public class DenunciasDTO {
     }
 
     public LocalDate getFechaDenunciasHechos() {
-        return fechaDenunciasHechos;
+        return FechaDenunciasHechos;
     }
 
     public void setFechaDenunciasHechos(LocalDate fechaDenunciasHechos) {
-        this.fechaDenunciasHechos = fechaDenunciasHechos;
+        FechaDenunciasHechos = fechaDenunciasHechos;
     }
 
     public LocalDate getFechaDenunciasRegistro() {
-        return fechaDenunciasRegistro;
+        return FechaDenunciasRegistro;
     }
 
     public void setFechaDenunciasRegistro(LocalDate fechaDenunciasRegistro) {
-        this.fechaDenunciasRegistro = fechaDenunciasRegistro;
+        FechaDenunciasRegistro = fechaDenunciasRegistro;
     }
 
     public LocalDate getFechaDenunciasEmision() {
-        return fechaDenunciasEmision;
+        return FechaDenunciasEmision;
     }
 
     public void setFechaDenunciasEmision(LocalDate fechaDenunciasEmision) {
-        this.fechaDenunciasEmision = fechaDenunciasEmision;
+        FechaDenunciasEmision = fechaDenunciasEmision;
     }
 
     public DenunciasLugarHecho getIdDenunciasLugarHecho() {

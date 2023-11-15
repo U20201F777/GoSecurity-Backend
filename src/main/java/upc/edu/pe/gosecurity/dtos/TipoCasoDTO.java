@@ -2,8 +2,8 @@ package upc.edu.pe.gosecurity.dtos;
 
 public class TipoCasoDTO {
     private int idTipoCaso;
-    private String tipoCaso;
-    private String estado;
+    private String TipoCaso;
+    private String Estado;
     public int getIdTipoCaso() {
         return idTipoCaso;
     }
@@ -13,18 +13,18 @@ public class TipoCasoDTO {
     }
 
     public String getTipoCaso() {
-        return tipoCaso;
+        return TipoCaso;
     }
 
     public void setTipoCaso(String tipoCaso) {
-        this.tipoCaso = tipoCaso;
+        TipoCaso = tipoCaso;
     }
 
     public String getEstado() {
-        return estado;
+        return Estado;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setEstado(String estado_notificacion) {
+        Estado = estado_notificacion;
     }
 }

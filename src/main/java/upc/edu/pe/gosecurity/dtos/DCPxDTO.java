@@ -4,6 +4,7 @@ public class DCPxDTO {
     private int id_comisaria;
     private String nombre_c;
     private int Cant_policia;
+    private int Cant_denuncias;
 
     public int getId_comisaria() {
         return id_comisaria;
@@ -27,5 +28,13 @@ public class DCPxDTO {
 
     public void setCant_policia(int cant_policia) {
         Cant_policia = cant_policia;
+    }
+
+    public int getCant_denuncias() {
+        return Cant_denuncias;
+    }
+
+    public void setCant_denuncias(int cant_denuncias) {
+        Cant_denuncias = cant_denuncias;
     }
 }

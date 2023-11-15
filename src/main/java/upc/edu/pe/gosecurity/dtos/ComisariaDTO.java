@@ -6,13 +6,13 @@ public class ComisariaDTO {
 
     private int idComisaria;
 
-    private String nombre_c;
+    private String Nombre_c;
 
-    private String telefono;
+    private String Telefono;
 
-    private String direccion;
+    private String Direccion;
 
-    private UbicacionC idUbicacionC;
+    private UbicacionC ubicacionC;
 
     public int getIdComisaria() {
         return idComisaria;
@@ -23,34 +23,34 @@ public class ComisariaDTO {
     }
 
     public String getNombre_c() {
-        return nombre_c;
+        return Nombre_c;
     }
 
     public void setNombre_c(String nombre_c) {
-        this.nombre_c = nombre_c;
+        Nombre_c = nombre_c;
     }
 
     public String getTelefono() {
-        return telefono;
+        return Telefono;
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        Telefono = telefono;
     }
 
     public String getDireccion() {
-        return direccion;
+        return Direccion;
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        Direccion = direccion;
     }
 
-    public UbicacionC getIdUbicacionC() {
-        return idUbicacionC;
+    public UbicacionC getUbicacionC() {
+        return ubicacionC;
     }
 
-    public void setIdUbicacionC(UbicacionC idUbicacionC) {
-        this.idUbicacionC = idUbicacionC;
+    public void setUbicacionC(UbicacionC ubicacionC) {
+        this.ubicacionC = ubicacionC;
     }
 }

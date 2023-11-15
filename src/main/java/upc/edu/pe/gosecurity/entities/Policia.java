@@ -32,6 +32,7 @@ public class Policia {
         this.fotoRostroPolicia = fotoRostroPolicia;
         this.fotoIdentPolicia = fotoIdentPolicia;
         this.rangoPolicia = rangoPolicia;
+        //this.usuario = usuario;
         this.idNotificacion = idNotificacion;
         this.idComisaria = idComisaria;
     }

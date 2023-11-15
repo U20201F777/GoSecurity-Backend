@@ -1,42 +1,49 @@
 package upc.edu.pe.gosecurity.dtos;
 
-import java.time.LocalDate;
-
 public class NotixCiudadanoDTO {
-    private String dniCiudadano;
-    private String nombrePertenencia;
-    private int cantAtendido;
-    private int cantNoAtendido;
+    private String tipo_caso;
+    private int DNIciudadano;
+    private String nombreP;
+    private String nombreDescripción;
+    private int idnotificacion;
 
-    public String getDniCiudadano() {
-        return dniCiudadano;
+    public String getTipo_caso() {
+        return tipo_caso;
     }
 
-    public void setDniCiudadano(String dniCiudadano) {
-        this.dniCiudadano = dniCiudadano;
+    public void setTipo_caso(String tipo_caso) {
+        this.tipo_caso = tipo_caso;
     }
 
-    public String getNombrePertenencia() {
-        return nombrePertenencia;
+    public int getDNIciudadano() {
+        return DNIciudadano;
     }
 
-    public void setNombrePertenencia(String nombrePertenencia) {
-        this.nombrePertenencia = nombrePertenencia;
+    public void setDNIciudadano(int DNIciudadano) {
+        this.DNIciudadano = DNIciudadano;
     }
 
-    public int getCantNoAtendido() {
-        return cantNoAtendido;
+    public String getNombreP() {
+        return nombreP;
     }
 
-    public void setCantNoAtendido(int cantNoAtendido) {
-        this.cantNoAtendido = cantNoAtendido;
+    public void setNombreP(String nombreP) {
+        this.nombreP = nombreP;
     }
 
-    public int getCantAtendido() {
-        return cantAtendido;
+    public String getNombreDescripción() {
+        return nombreDescripción;
     }
 
-    public void setCantAtendido(int cantAtendido) {
-        this.cantAtendido = cantAtendido;
+    public void setNombreDescripción(String nombreDescripción) {
+        this.nombreDescripción = nombreDescripción;
+    }
+
+    public int getIdnotificacion() {
+        return idnotificacion;
+    }
+
+    public void setIdnotificacion(int idnotificacion) {
+        this.idnotificacion = idnotificacion;
     }
 }

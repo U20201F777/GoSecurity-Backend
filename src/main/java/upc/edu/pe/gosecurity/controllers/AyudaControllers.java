@@ -16,26 +16,10 @@ public class AyudaControllers {
     @Autowired
     private IAyudaService aS;
     @PostMapping
-    public void registrar(@RequestBody AyudaDTO dto){
+    public void Registrar(@RequestBody AyudaDTO dto){
         ModelMapper m= new ModelMapper();
         Ayuda p=m.map(dto, Ayuda.class);
         aS.insert(p);
-    }
-    @PutMapping
-    public void modificar(@RequestBody AyudaDTO dto){
-        ModelMapper m= new ModelMapper();
-        Ayuda p=m.map(dto, Ayuda.class);
-        aS.insert(p);
-    }
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
-        aS.delete(id);
-    }
-    @GetMapping("/{id}")
-    public AyudaDTO listaId(@PathVariable("id") Integer id){
-        ModelMapper m= new ModelMapper();
-        AyudaDTO dto=m.map(aS.listId(id), AyudaDTO.class);
-        return dto;
     }
     @GetMapping
     public List<AyudaDTO> list() {
@@ -44,5 +28,20 @@ public class AyudaControllers {
             return m.map(x, AyudaDTO.class);
         }).collect(Collectors.toList());
     }
-
+    @GetMapping("/{id}")
+    public AyudaDTO listaId(@PathVariable("id") Integer id){
+        ModelMapper m= new ModelMapper();
+        AyudaDTO dto=m.map(aS.listId(id), AyudaDTO.class);
+        return dto;
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        aS.delete(id);
+    }
+    @PutMapping
+    public void Modificar(@RequestBody AyudaDTO dto){
+        ModelMapper m= new ModelMapper();
+        Ayuda p=m.map(dto, Ayuda.class);
+        aS.insert(p);
+    }
 }

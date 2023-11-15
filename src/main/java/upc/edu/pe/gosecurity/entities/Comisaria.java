@@ -10,25 +10,25 @@ public class Comisaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idComisaria;
-    @Column(name = "nombre_c", length = 50, nullable = false)
-    private String nombre_c;
-    @Column(name = "telefono", length = 15, nullable = false)
-    private String telefono;
-    @Column(name = "direccion", length = 50, nullable = false)
-    private String direccion;
+    @Column(name = "Nombre_c", length = 50, nullable = false)
+    private String Nombre_c;
+    @Column(name = "teleono", length = 15, nullable = false)
+    private String Telefono;
+    @Column(name = "Direccion", length = 50, nullable = false)
+    private String Direccion;
     @ManyToOne
     @JoinColumn(name = "idUbicacionC")
-    private UbicacionC idUbicacionC;
+    private UbicacionC UbicacionC;
 
     public Comisaria() {
     }
 
     public Comisaria(int idComisaria, String nombre_c, String telefono, String direccion, UbicacionC idUbicacionC) {
         this.idComisaria = idComisaria;
-        this.nombre_c = nombre_c;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.idUbicacionC = idUbicacionC;
+        Nombre_c = nombre_c;
+        Telefono = telefono;
+        Direccion = direccion;
+        this.UbicacionC = idUbicacionC;
     }
 
     public int getIdComisaria() {
@@ -40,34 +40,36 @@ public class Comisaria {
     }
 
     public String getNombre_c() {
-        return nombre_c;
+        return Nombre_c;
     }
 
     public void setNombre_c(String nombre_c) {
-        this.nombre_c = nombre_c;
+        Nombre_c = nombre_c;
     }
 
     public String getTelefono() {
-        return telefono;
+        return Telefono;
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        Telefono = telefono;
     }
 
     public String getDireccion() {
-        return direccion;
+
+        return Direccion;
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+
+        Direccion = direccion;
     }
 
-    public UbicacionC getIdUbicacionC() {
-        return idUbicacionC;
+    public UbicacionC getUbicacionC() {
+        return UbicacionC;
     }
 
-    public void setIdUbicacionC(UbicacionC idUbicacionC) {
-        this.idUbicacionC = idUbicacionC;
+    public void setUbicacionC(UbicacionC idUbicacionC) {
+        this.UbicacionC = idUbicacionC;
     }
 }
