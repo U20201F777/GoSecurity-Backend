@@ -21,28 +21,27 @@ public class TipoCasoController {
         TipoCaso p=m.map(dto, TipoCaso.class);
         tS.insert(p);
     }
-    @GetMapping
-    public List<TipoCasoDTO> list() {
-        return tS.list().stream().map(x -> {
-            ModelMapper m = new ModelMapper();
-            return m.map(x, TipoCasoDTO.class);
-        }).collect(Collectors.toList());
+    @PutMapping
+    public void Modificar(@RequestBody TipoCasoDTO dto){
+        ModelMapper m= new ModelMapper();
+        TipoCaso p=m.map(dto, TipoCaso.class);
+        tS.insert(p);
     }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         tS.delete(id);
     }
-
     @GetMapping("/{id}")
     public TipoCasoDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m = new ModelMapper();
         TipoCasoDTO dto = m.map(tS.listId(id), TipoCasoDTO.class);
         return dto;
     }
-    @PutMapping
-    public void Modificar(@RequestBody TipoCasoDTO dto){
-        ModelMapper m= new ModelMapper();
-        TipoCaso p=m.map(dto, TipoCaso.class);
-        tS.insert(p);
+    @GetMapping
+    public List<TipoCasoDTO> list() {
+        return tS.list().stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, TipoCasoDTO.class);
+        }).collect(Collectors.toList());
     }
 }

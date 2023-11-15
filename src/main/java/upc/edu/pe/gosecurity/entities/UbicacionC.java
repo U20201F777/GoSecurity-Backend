@@ -10,26 +10,25 @@ public class UbicacionC {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUbicacionC;
-    @Column(name = "Departamento",length = 150, nullable = false)
-    private String Departamento;
-    @Column(name = "Ciudad", length = 150, nullable = false)
-    private String Ciudad;
-    @Column(name = "Distrito", length = 150, nullable = false)
-    private String Distrito;
-    @Column(name = "Direccion", length = 150, nullable = false)
-    private String Direccion;
+    @Column(name = "departamento",length = 150, nullable = false)
+    private String departamento;
+    @Column(name = "ciudad", length = 150, nullable = false)
+    private String ciudad;
+    @Column(name = "distrito", length = 150, nullable = false)
+    private String distrito;
+    @Column(name = "direccion", length = 150, nullable = false)
+    private String direccion;
 
 
     public UbicacionC() {
     }
 
-
     public UbicacionC(int idUbicacionC, String departamento, String ciudad, String distrito, String direccion) {
         this.idUbicacionC = idUbicacionC;
-        Departamento = departamento;
-        Ciudad = ciudad;
-        Distrito = distrito;
-        Direccion = direccion;
+        this.departamento = departamento;
+        this.ciudad = ciudad;
+        this.distrito = distrito;
+        this.direccion = direccion;
     }
 
     public int getIdUbicacionC() {
@@ -41,34 +40,34 @@ public class UbicacionC {
     }
 
     public String getDepartamento() {
-        return Departamento;
+        return departamento;
     }
 
     public void setDepartamento(String departamento) {
-        Departamento = departamento;
+        this.departamento = departamento;
     }
 
     public String getCiudad() {
-        return Ciudad;
+        return ciudad;
     }
 
     public void setCiudad(String ciudad) {
-        Ciudad = ciudad;
+        this.ciudad = ciudad;
     }
 
     public String getDistrito() {
-        return Distrito;
+        return distrito;
     }
 
     public void setDistrito(String distrito) {
-        Distrito = distrito;
+        this.distrito = distrito;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
     public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.direccion = direccion;
     }
 }

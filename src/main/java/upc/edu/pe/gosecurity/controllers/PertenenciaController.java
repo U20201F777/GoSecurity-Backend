@@ -21,30 +21,27 @@ public class PertenenciaController {
         Pertenencias p=m.map(dto,Pertenencias.class);
         PR.insert(p);
     }
-
-    @GetMapping
-    public List<PertenenciaDTO> listar(){
-        return PR.list().stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, PertenenciaDTO.class);
-        }).collect(Collectors.toList());
+    @PutMapping
+    public void Modificar(@RequestBody PertenenciaDTO dto){
+        ModelMapper m = new ModelMapper();
+        Pertenencias p=m.map(dto,Pertenencias.class);
+        PR.insert(p);
     }
-
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id ){
         PR.delete(id);
     }
-
     @GetMapping("/{id}")
     public PertenenciaDTO ListarId(@PathVariable("id") Integer id){
         ModelMapper m = new ModelMapper();
         PertenenciaDTO dto=m.map(PR.ListId(id), PertenenciaDTO.class);
         return dto;
     }
-    @PutMapping
-    public void Modificar(@RequestBody PertenenciaDTO dto){
-        ModelMapper m = new ModelMapper();
-        Pertenencias p=m.map(dto,Pertenencias.class);
-        PR.insert(p);
+    @GetMapping
+    public List<PertenenciaDTO> listar(){
+        return PR.list().stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, PertenenciaDTO.class);
+        }).collect(Collectors.toList());
     }
 }

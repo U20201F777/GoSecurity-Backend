@@ -21,13 +21,15 @@ public class PModeloController {
         PertenenciasModelo p=m.map(dto,PertenenciasModelo.class);
         ModR.insert(p);
     }
-
-    @GetMapping
-    public List<PModeloDTO> listar(){
-        return ModR.list().stream().map(x->{
-            ModelMapper m=new ModelMapper();
-            return m.map(x, PModeloDTO.class);
-        }).collect(Collectors.toList());
+    @PutMapping
+    public void Modificar(@RequestBody PModeloDTO dto){
+        ModelMapper m = new ModelMapper();
+        PertenenciasModelo p=m.map(dto,PertenenciasModelo.class);
+        ModR.insert(p);
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id")Integer id ){
+        ModR.delete(id);
     }
     @GetMapping("/{id}")
     public PModeloDTO listaId(@PathVariable("id") Integer id){
@@ -35,16 +37,11 @@ public class PModeloController {
         PModeloDTO dto=m.map(ModR.listId(id), PModeloDTO.class);
         return dto;
     }
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id")Integer id ){
-        ModR.delete(id);
+    @GetMapping
+    public List<PModeloDTO> listar(){
+        return ModR.list().stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, PModeloDTO.class);
+        }).collect(Collectors.toList());
     }
-
-    @PutMapping
-    public void Modificar(@RequestBody PModeloDTO dto){
-        ModelMapper m = new ModelMapper();
-        PertenenciasModelo p=m.map(dto,PertenenciasModelo.class);
-        ModR.insert(p);
-    }
-
 }

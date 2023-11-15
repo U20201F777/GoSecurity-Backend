@@ -8,18 +8,17 @@ public class TipoCaso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoCaso;
-    @Column(name = "TipoCaso", length = 50, nullable = false)
-    private String TipoCaso;
-    @Column(name = "Estado", length = 25, nullable = false)
-    private String Estado;
+    @Column(name = "tipoCaso", length = 50, nullable = false)
+    private String tipoCaso;
+    @Column(name = "estado", length = 25, nullable = false)
+    private String estado;
     public TipoCaso() {
     }
 
     public TipoCaso(int idTipoCaso, String tipoCaso, String estado) {
-
         this.idTipoCaso = idTipoCaso;
-        TipoCaso = tipoCaso;
-        Estado = estado;
+        this.tipoCaso = tipoCaso;
+        this.estado = estado;
     }
 
     public int getIdTipoCaso() {
@@ -31,18 +30,18 @@ public class TipoCaso {
     }
 
     public String getTipoCaso() {
-        return TipoCaso;
+        return tipoCaso;
     }
 
     public void setTipoCaso(String tipoCaso) {
-        TipoCaso = tipoCaso;
+        this.tipoCaso = tipoCaso;
     }
 
     public String getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(String estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 }

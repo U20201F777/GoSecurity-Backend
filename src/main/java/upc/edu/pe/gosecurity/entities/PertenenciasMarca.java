@@ -8,7 +8,7 @@ public class PertenenciasMarca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPertenenciasMarca;
-    @Column(name = "Marca",length = 100,nullable = false)
+    @Column(name = "namePertenenciasMarca",length = 100,nullable = false)
     private String namePertenenciasMarca;
 
     public PertenenciasMarca() {

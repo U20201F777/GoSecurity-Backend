@@ -2,8 +2,8 @@ package upc.edu.pe.gosecurity.dtos;
 
 public class DenunciasxCiudadanoDTO {
     private int idDenuncias;
-    private int DNIciudadano;
-    private int CantDenuncias;
+    private int dniCiudadano;
+    private int cantDenuncias;
 
     public int getIdDenuncias() {
         return idDenuncias;
@@ -13,19 +13,19 @@ public class DenunciasxCiudadanoDTO {
         this.idDenuncias = idDenuncias;
     }
 
-    public int getDNIciudadano() {
-        return DNIciudadano;
+    public int getDniCiudadano() {
+        return dniCiudadano;
     }
 
-    public void setDNIciudadano(int DNIciudadano) {
-        this.DNIciudadano = DNIciudadano;
+    public void setDniCiudadano(int dniCiudadano) {
+        this.dniCiudadano = dniCiudadano;
     }
 
     public int getCantDenuncias() {
-        return CantDenuncias;
+        return cantDenuncias;
     }
 
     public void setCantDenuncias(int cantDenuncias) {
-        CantDenuncias = cantDenuncias;
+        this.cantDenuncias = cantDenuncias;
     }
 }

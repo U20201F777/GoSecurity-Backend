@@ -21,6 +21,16 @@ public class PColorController {
         PertenenciasColor p=m.map(dto,PertenenciasColor.class);
         CR.insert(p);
     }
+    @PutMapping
+    public void Modificar(@RequestBody PColorDTO dto){
+        ModelMapper m = new ModelMapper();
+        PertenenciasColor p=m.map(dto,PertenenciasColor.class);
+        CR.insert(p);
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id")Integer id ){
+        CR.delete(id);
+    }
 
     @GetMapping
     public List<PColorDTO> listar(){
@@ -29,16 +39,4 @@ public class PColorController {
             return m.map(x, PColorDTO.class);
         }).collect(Collectors.toList());
     }
-
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id")Integer id ){
-        CR.delete(id);
-    }
-    @PutMapping
-    public void Modificar(@RequestBody PColorDTO dto){
-        ModelMapper m = new ModelMapper();
-        PertenenciasColor p=m.map(dto,PertenenciasColor.class);
-        CR.insert(p);
-    }
-
 }

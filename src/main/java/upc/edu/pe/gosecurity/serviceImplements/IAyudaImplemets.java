@@ -3,7 +3,6 @@ package upc.edu.pe.gosecurity.serviceImplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import upc.edu.pe.gosecurity.entities.Ayuda;
-import upc.edu.pe.gosecurity.entities.TipoCaso;
 import upc.edu.pe.gosecurity.repositories.AyudaRepository;
 import upc.edu.pe.gosecurity.servicesInterfaces.IAyudaService;
 

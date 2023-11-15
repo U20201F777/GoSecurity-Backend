@@ -21,7 +21,16 @@ public class PeTipoController {
         PertenenciasTipo p=m.map(dto,PertenenciasTipo.class);
         TR.insert(p);
     }
-
+    @PutMapping
+    public void Modificar(@RequestBody PTipoDTO dto){
+        ModelMapper m = new ModelMapper();
+        PertenenciasTipo p=m.map(dto,PertenenciasTipo.class);
+        TR.insert(p);
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id")Integer id ){
+        TR.delete(id);
+    }
     @GetMapping
     public List<PTipoDTO> listar(){
         return TR.list().stream().map(x->{
@@ -29,18 +38,4 @@ public class PeTipoController {
             return m.map(x, PTipoDTO.class);
         }).collect(Collectors.toList());
     }
-
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id")Integer id ){
-        TR.delete(id);
-    }
-
-    @GetMapping("/{id}")
-    @PutMapping
-    public void Modificar(@RequestBody PTipoDTO dto){
-        ModelMapper m = new ModelMapper();
-        PertenenciasTipo p=m.map(dto,PertenenciasTipo.class);
-        TR.insert(p);
-    }
-
 }

@@ -4,13 +4,13 @@ public class UbicacionCDTO {
 
     private int idUbicacionC;
 
-    private String Departamento;
+    private String departamento;
 
-    private String Ciudad;
+    private String ciudad;
 
-    private String Distrito;
+    private String distrito;
 
-    private String Direccion;
+    private String direccion;
 
     public int getIdUbicacionC() {
         return idUbicacionC;
@@ -21,34 +21,34 @@ public class UbicacionCDTO {
     }
 
     public String getDepartamento() {
-        return Departamento;
+        return departamento;
     }
 
     public void setDepartamento(String departamento) {
-        Departamento = departamento;
+        this.departamento = departamento;
     }
 
     public String getCiudad() {
-        return Ciudad;
+        return ciudad;
     }
 
     public void setCiudad(String ciudad) {
-        Ciudad = ciudad;
+        this.ciudad = ciudad;
     }
 
     public String getDistrito() {
-        return Distrito;
+        return distrito;
     }
 
     public void setDistrito(String distrito) {
-        Distrito = distrito;
+        this.distrito = distrito;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
     public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.direccion = direccion;
     }
 }
