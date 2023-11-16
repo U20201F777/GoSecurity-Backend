@@ -24,6 +24,18 @@ public class CiudadanoController {
         Ciudadano c=m.map(dto, Ciudadano.class);
         cS.insert(c);
     }
+    @PostMapping("/insert")
+    public void insertNew(@RequestBody CiudadanoDTO dto){
+        ModelMapper m=new ModelMapper();
+        Ciudadano a=m.map(dto, Ciudadano.class);
+        cS.insert(a);
+    }
+    @GetMapping("/listByUser/{username}")
+    public CiudadanoDTO listByUser(@PathVariable ("username")String username){
+        ModelMapper m=new ModelMapper();
+        CiudadanoDTO dto=m.map(cS.listbyUser(username),CiudadanoDTO.class);
+        return dto;
+    }
     @PutMapping
     public void modificar(@RequestBody CiudadanoDTO dto){
         ModelMapper m = new ModelMapper();

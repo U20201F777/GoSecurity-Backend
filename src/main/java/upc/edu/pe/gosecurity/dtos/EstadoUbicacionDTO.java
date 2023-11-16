@@ -5,7 +5,7 @@ public class EstadoUbicacionDTO {
 
     private int idEstadoUbicacion;
 
-    private Boolean Estado;
+    private Boolean estado;
 
     public int getIdEstadoUbicacion() {
         return idEstadoUbicacion;
@@ -16,10 +16,10 @@ public class EstadoUbicacionDTO {
     }
 
     public Boolean getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(Boolean estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 }

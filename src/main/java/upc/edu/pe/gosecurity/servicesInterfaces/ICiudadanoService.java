@@ -10,4 +10,5 @@ public interface ICiudadanoService {
     public Ciudadano listId(int idCiudadano);
     public void delete(int idCiudadano);
     List<Ciudadano> findByNumeroCiudadano(int dniCiudadano);
+    public Ciudadano listbyUser(String username);
 }

@@ -11,12 +11,12 @@ public class Pertenencias {
     private int idPertenencias;
     @Column(name = "namePertenencias",length = 100,nullable = false)
     private String namePertenencias;
-    @Column(name = "AnioPertenencias",nullable = false)
-    private LocalDate AnioPertenencias;
-    @Column(name = "EspecificacionesPertenencias",length = 100,nullable = false)
-    private String EspecificacionesPertenencias;
-    @Column(name = "ImagenPertenencias",length = 100,nullable = false)
-    private String ImagenPertenencias;
+    @Column(name = "anioPertenencias",nullable = false)
+    private LocalDate anioPertenencias;
+    @Column(name = "especificacionesPertenencias",length = 100,nullable = false)
+    private String especificacionesPertenencias;
+    @Column(name = "imagenPertenencias",length = 100,nullable = false)
+    private String imagenPertenencias;
     @ManyToOne
     @JoinColumn(name="idPertenenciasColor")
     private PertenenciasColor idPertenenciasColor;
@@ -44,9 +44,9 @@ public class Pertenencias {
     public Pertenencias(int idPertenencias, String namePertenencias, LocalDate anioPertenencias, String especificacionesPertenencias, String imagenPertenencias, PertenenciasColor idPertenenciasColor, PertenenciasMarca idPertenenciasMarca, PertenenciasModelo idPertenenciasModelo, PertenenciasTipo idPertenenciasTipo, Ciudadano idCiudadano, UbicacionP idUbicacionP, Ayuda idAyuda) {
         this.idPertenencias = idPertenencias;
         this.namePertenencias = namePertenencias;
-        AnioPertenencias = anioPertenencias;
-        EspecificacionesPertenencias = especificacionesPertenencias;
-        ImagenPertenencias = imagenPertenencias;
+        this.anioPertenencias = anioPertenencias;
+        this.especificacionesPertenencias = especificacionesPertenencias;
+        this.imagenPertenencias = imagenPertenencias;
         this.idPertenenciasColor = idPertenenciasColor;
         this.idPertenenciasMarca = idPertenenciasMarca;
         this.idPertenenciasModelo = idPertenenciasModelo;
@@ -73,27 +73,27 @@ public class Pertenencias {
     }
 
     public LocalDate getAnioPertenencias() {
-        return AnioPertenencias;
+        return anioPertenencias;
     }
 
     public void setAnioPertenencias(LocalDate anioPertenencias) {
-        AnioPertenencias = anioPertenencias;
+        this.anioPertenencias = anioPertenencias;
     }
 
     public String getEspecificacionesPertenencias() {
-        return EspecificacionesPertenencias;
+        return especificacionesPertenencias;
     }
 
     public void setEspecificacionesPertenencias(String especificacionesPertenencias) {
-        EspecificacionesPertenencias = especificacionesPertenencias;
+        this.especificacionesPertenencias = especificacionesPertenencias;
     }
 
     public String getImagenPertenencias() {
-        return ImagenPertenencias;
+        return imagenPertenencias;
     }
 
     public void setImagenPertenencias(String imagenPertenencias) {
-        ImagenPertenencias = imagenPertenencias;
+        this.imagenPertenencias = imagenPertenencias;
     }
 
     public PertenenciasColor getIdPertenenciasColor() {

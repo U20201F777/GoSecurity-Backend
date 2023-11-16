@@ -17,23 +17,22 @@ public class Policia {
     @Column(name = "rangoPolicia", length = 50, nullable = false)
     private String rangoPolicia;
     @ManyToOne
-    @JoinColumn(name = "idNotificacion")
-    private Notificacion idNotificacion;
-    @ManyToOne
     @JoinColumn(name = "idComisaria")
     private Comisaria idComisaria;
-
+    @ManyToOne
+    @JoinColumn(name = "idUser", nullable = false)
+    private Users users;
     public Policia() {
     }
 
-    public Policia(int idPolicia, String numeroPlacaPolicia, String fotoRostroPolicia, String fotoIdentPolicia, String rangoPolicia, Notificacion idNotificacion, Comisaria idComisaria) {
+    public Policia(int idPolicia, String numeroPlacaPolicia, String fotoRostroPolicia, String fotoIdentPolicia, String rangoPolicia, Comisaria idComisaria, Users users) {
         this.idPolicia = idPolicia;
         this.numeroPlacaPolicia = numeroPlacaPolicia;
         this.fotoRostroPolicia = fotoRostroPolicia;
         this.fotoIdentPolicia = fotoIdentPolicia;
         this.rangoPolicia = rangoPolicia;
-        this.idNotificacion = idNotificacion;
         this.idComisaria = idComisaria;
+        this.users = users;
     }
 
     public int getIdPolicia() {
@@ -76,19 +75,19 @@ public class Policia {
         this.rangoPolicia = rangoPolicia;
     }
 
-    public Notificacion getIdNotificacion() {
-        return idNotificacion;
-    }
-
-    public void setIdNotificacion(Notificacion idNotificacion) {
-        this.idNotificacion = idNotificacion;
-    }
-
     public Comisaria getIdComisaria() {
         return idComisaria;
     }
 
     public void setIdComisaria(Comisaria idComisaria) {
         this.idComisaria = idComisaria;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

@@ -2,14 +2,7 @@ package upc.edu.pe.gosecurity.security;
 
 import java.io.Serializable;
 
-/*
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-
-//Clase 4
+/*Clase 4
 @Data
 @AllArgsConstructor
 @NoArgsConstructor*/

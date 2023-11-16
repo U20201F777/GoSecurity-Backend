@@ -37,4 +37,9 @@ public class CiudadanoServiceImplement implements ICiudadanoService {
     public List<Ciudadano> findByNumeroCiudadano(int dniCiudadano) {
         return cR.findByNumeroCiudadano(dniCiudadano);
     }
+
+    @Override
+    public Ciudadano listbyUser(String username) {
+        return cR.listByUser(username);
+    }
 }

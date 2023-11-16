@@ -3,7 +3,6 @@ package upc.edu.pe.gosecurity.dtos;
 import upc.edu.pe.gosecurity.entities.Ciudadano;
 import upc.edu.pe.gosecurity.entities.Comisaria;
 import upc.edu.pe.gosecurity.entities.DenunciasLugarHecho;
-import upc.edu.pe.gosecurity.entities.DenunciasTipificacion;
 
 import java.time.LocalDate;
 
@@ -12,9 +11,7 @@ public class DenunciasDTO {
     private String nameDenuncias;
     private LocalDate fechaDenunciasHechos;
     private LocalDate fechaDenunciasRegistro;
-    private LocalDate fechaDenunciasEmision;
     private DenunciasLugarHecho idDenunciasLugarHecho;
-    private DenunciasTipificacion idDenunciasTipificacion;
     private Ciudadano idCiudadano;
     private Comisaria idComisaria;
 
@@ -50,28 +47,12 @@ public class DenunciasDTO {
         this.fechaDenunciasRegistro = fechaDenunciasRegistro;
     }
 
-    public LocalDate getFechaDenunciasEmision() {
-        return fechaDenunciasEmision;
-    }
-
-    public void setFechaDenunciasEmision(LocalDate fechaDenunciasEmision) {
-        this.fechaDenunciasEmision = fechaDenunciasEmision;
-    }
-
     public DenunciasLugarHecho getIdDenunciasLugarHecho() {
         return idDenunciasLugarHecho;
     }
 
     public void setIdDenunciasLugarHecho(DenunciasLugarHecho idDenunciasLugarHecho) {
         this.idDenunciasLugarHecho = idDenunciasLugarHecho;
-    }
-
-    public DenunciasTipificacion getIdDenunciasTipificacion() {
-        return idDenunciasTipificacion;
-    }
-
-    public void setIdDenunciasTipificacion(DenunciasTipificacion idDenunciasTipificacion) {
-        this.idDenunciasTipificacion = idDenunciasTipificacion;
     }
 
     public Ciudadano getIdCiudadano() {

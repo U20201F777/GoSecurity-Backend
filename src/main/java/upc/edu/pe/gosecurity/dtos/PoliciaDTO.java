@@ -10,7 +10,6 @@ public class PoliciaDTO {
     private String fotoRostroPolicia;
     private String fotoIdentPolicia;
     private String rangoPolicia;
-    private Notificacion idNotificacion;
     private Comisaria idComisaria;
 
     public int getIdPolicia() {
@@ -51,14 +50,6 @@ public class PoliciaDTO {
 
     public void setRangoPolicia(String rangoPolicia) {
         this.rangoPolicia = rangoPolicia;
-    }
-
-    public Notificacion getIdNotificacion() {
-        return idNotificacion;
-    }
-
-    public void setIdNotificacion(Notificacion idNotificacion) {
-        this.idNotificacion = idNotificacion;
     }
 
     public Comisaria getIdComisaria() {

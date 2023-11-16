@@ -27,6 +27,12 @@ public class PoliciaController {
         Policia p = m.map(dto, Policia.class);
         pS.insert(p);
     }
+    @GetMapping("/listbyUser/{username}")
+    public PoliciaDTO listbyUser(@PathVariable ("username")String username){
+        ModelMapper m=new ModelMapper();
+        PoliciaDTO dto=m.map(pS.listbyUser(username),PoliciaDTO.class);
+        return dto;
+    }
     @PutMapping
     public void Modificar(@RequestBody PoliciaDTO dto){
         ModelMapper m = new ModelMapper();

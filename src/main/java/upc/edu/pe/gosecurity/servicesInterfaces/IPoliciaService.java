@@ -10,5 +10,6 @@ public interface IPoliciaService {
     public Policia listId(int idPolicia);
     public void delete(int idPolicia);
     List<Policia> findByNumeroPlacaPolicia(String NroPlaca);
+    public Policia listbyUser(String username);
     public List<String[]> casosPorTipo();
 }

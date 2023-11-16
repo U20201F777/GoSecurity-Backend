@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public interface IPoliciaRepository extends JpaRepository<Policia,Integer> {
     List<Policia> findByNumeroPlacaPolicia(String NroPlaca);
+    @Query("from Policia v where v.users.username =:username")
+    Policia listByUser(String username);
     @Query(value = "SELECT \n" +
             "    C.numero_ciudadano AS DNI_Ciudadano,\n" +
             "    P.nombre_p AS Nombre_pertenencia,\n" +

@@ -10,8 +10,8 @@ public class EstadoUbicacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEstadoUbicacion;
 
-    @Column(name = "Estado", nullable = false)
-    private Boolean Estado;
+    @Column(name = "estado", nullable = false)
+    private Boolean estado;
 
 
     public EstadoUbicacion() {
@@ -19,7 +19,7 @@ public class EstadoUbicacion {
 
     public EstadoUbicacion(int idEstadoUbicacion, Boolean estado) {
         this.idEstadoUbicacion = idEstadoUbicacion;
-        Estado = estado;
+        this.estado = estado;
     }
 
     public int getIdEstadoUbicacion() {
@@ -31,10 +31,10 @@ public class EstadoUbicacion {
     }
 
     public Boolean getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(Boolean estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 }

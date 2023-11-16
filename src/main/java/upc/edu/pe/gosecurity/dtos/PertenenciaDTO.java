@@ -7,15 +7,13 @@ import java.time.LocalDate;
 public class PertenenciaDTO {
     private int idPertenencias;
     private String namePertenencias;
-    private LocalDate AnioPertenencias;
-    private String EspecificacionesPertenencias;
-    private String ImagenPertenencias;
-    private String CodigoPertenencias;
-    private int SeriePertenencias;
-    private PertenenciasColor pertenenciasColor;
-    private PertenenciasMarca pertenenciasMarca;
-    private PertenenciasModelo pertenenciasModelo;
-    private PertenenciasTipo pertenenciasTipo;
+    private LocalDate anioPertenencias;
+    private String especificacionesPertenencias;
+    private String imagenPertenencias;
+    private PertenenciasColor idPertenenciasColor;
+    private PertenenciasMarca idPertenenciasMarca;
+    private PertenenciasModelo idPertenenciasModelo;
+    private PertenenciasTipo idPertenenciasTipo;
     private Ciudadano idCiudadano;
     private UbicacionP idUbicacionP;
     private Ayuda idAyuda;
@@ -37,75 +35,59 @@ public class PertenenciaDTO {
     }
 
     public LocalDate getAnioPertenencias() {
-        return AnioPertenencias;
+        return anioPertenencias;
     }
 
     public void setAnioPertenencias(LocalDate anioPertenencias) {
-        AnioPertenencias = anioPertenencias;
+        this.anioPertenencias = anioPertenencias;
     }
 
     public String getEspecificacionesPertenencias() {
-        return EspecificacionesPertenencias;
+        return especificacionesPertenencias;
     }
 
     public void setEspecificacionesPertenencias(String especificacionesPertenencias) {
-        EspecificacionesPertenencias = especificacionesPertenencias;
+        this.especificacionesPertenencias = especificacionesPertenencias;
     }
 
     public String getImagenPertenencias() {
-        return ImagenPertenencias;
+        return imagenPertenencias;
     }
 
     public void setImagenPertenencias(String imagenPertenencias) {
-        ImagenPertenencias = imagenPertenencias;
+        this.imagenPertenencias = imagenPertenencias;
     }
 
-    public String getCodigoPertenencias() {
-        return CodigoPertenencias;
+    public PertenenciasColor getIdPertenenciasColor() {
+        return idPertenenciasColor;
     }
 
-    public void setCodigoPertenencias(String codigoPertenencias) {
-        CodigoPertenencias = codigoPertenencias;
+    public void setIdPertenenciasColor(PertenenciasColor idPertenenciasColor) {
+        this.idPertenenciasColor = idPertenenciasColor;
     }
 
-    public int getSeriePertenencias() {
-        return SeriePertenencias;
+    public PertenenciasMarca getIdPertenenciasMarca() {
+        return idPertenenciasMarca;
     }
 
-    public void setSeriePertenencias(int seriePertenencias) {
-        SeriePertenencias = seriePertenencias;
+    public void setIdPertenenciasMarca(PertenenciasMarca idPertenenciasMarca) {
+        this.idPertenenciasMarca = idPertenenciasMarca;
     }
 
-    public PertenenciasColor getPertenenciasColor() {
-        return pertenenciasColor;
+    public PertenenciasModelo getIdPertenenciasModelo() {
+        return idPertenenciasModelo;
     }
 
-    public void setPertenenciasColor(PertenenciasColor pertenenciasColor) {
-        this.pertenenciasColor = pertenenciasColor;
+    public void setIdPertenenciasModelo(PertenenciasModelo idPertenenciasModelo) {
+        this.idPertenenciasModelo = idPertenenciasModelo;
     }
 
-    public PertenenciasMarca getPertenenciasMarca() {
-        return pertenenciasMarca;
+    public PertenenciasTipo getIdPertenenciasTipo() {
+        return idPertenenciasTipo;
     }
 
-    public void setPertenenciasMarca(PertenenciasMarca pertenenciasMarca) {
-        this.pertenenciasMarca = pertenenciasMarca;
-    }
-
-    public PertenenciasModelo getPertenenciasModelo() {
-        return pertenenciasModelo;
-    }
-
-    public void setPertenenciasModelo(PertenenciasModelo pertenenciasModelo) {
-        this.pertenenciasModelo = pertenenciasModelo;
-    }
-
-    public PertenenciasTipo getPertenenciasTipo() {
-        return pertenenciasTipo;
-    }
-
-    public void setPertenenciasTipo(PertenenciasTipo pertenenciasTipo) {
-        this.pertenenciasTipo = pertenenciasTipo;
+    public void setIdPertenenciasTipo(PertenenciasTipo idPertenenciasTipo) {
+        this.idPertenenciasTipo = idPertenenciasTipo;
     }
 
     public Ciudadano getIdCiudadano() {

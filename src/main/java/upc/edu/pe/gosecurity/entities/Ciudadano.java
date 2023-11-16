@@ -10,13 +10,17 @@ public class Ciudadano {
     private int idCiudadano;
     @Column(name = "numeroCiudadano", length = 9,nullable = false)
     private String numeroCiudadano;
+    @ManyToOne
+    @JoinColumn(name = "idUser", nullable = false)
+    private Users users;
 
     public Ciudadano() {
     }
 
-    public Ciudadano(int idCiudadano, String numeroCiudadano) {
+    public Ciudadano(int idCiudadano, String numeroCiudadano, Users users) {
         this.idCiudadano = idCiudadano;
         this.numeroCiudadano = numeroCiudadano;
+        this.users = users;
     }
 
     public int getIdCiudadano() {
@@ -33,5 +37,13 @@ public class Ciudadano {
 
     public void setNumeroCiudadano(String numeroCiudadano) {
         this.numeroCiudadano = numeroCiudadano;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

@@ -11,13 +11,17 @@ public class Notificacion {
    @ManyToOne
    @JoinColumn(name = "idTipoCaso")
    private TipoCaso idTipoCaso;
+   @ManyToOne
+   @JoinColumn(name= "idPolicia")
+   private Policia idPolicia;
 
     public Notificacion() {
     }
 
-    public Notificacion(int idNotificacion, TipoCaso idTipoCaso) {
+    public Notificacion(int idNotificacion, TipoCaso idTipoCaso, Policia idPolicia) {
         this.idNotificacion = idNotificacion;
         this.idTipoCaso = idTipoCaso;
+        this.idPolicia = idPolicia;
     }
 
     public int getIdNotificacion() {
@@ -34,5 +38,13 @@ public class Notificacion {
 
     public void setIdTipoCaso(TipoCaso idTipoCaso) {
         this.idTipoCaso = idTipoCaso;
+    }
+
+    public Policia getIdPolicia() {
+        return idPolicia;
+    }
+
+    public void setIdPolicia(Policia idPolicia) {
+        this.idPolicia = idPolicia;
     }
 }

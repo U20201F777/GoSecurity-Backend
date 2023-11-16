@@ -12,32 +12,30 @@ import java.util.List;
 public class PoliciaServiceImplement implements IPoliciaService {
     @Autowired
     private IPoliciaRepository pR;
-
     @Override
     public void insert(Policia policia) {
         pR.save(policia);
     }
-
     @Override
     public List<Policia> list() {
         return pR.findAll();
     }
-
     @Override
     public Policia listId(int idPolicia) {
         return pR.findById(idPolicia).orElse(new Policia());
     }
-
     @Override
     public void delete(int idPolicia) {
         pR.deleteById(idPolicia);
     }
-
     @Override
     public List<Policia> findByNumeroPlacaPolicia(String NroPlaca) {
         return pR.findByNumeroPlacaPolicia(NroPlaca);
     }
-
+    @Override
+    public Policia listbyUser(String username) {
+        return pR.listByUser(username);
+    }
     @Override
     public List<String[]> casosPorTipo() {
         return pR.casosPorTipo();

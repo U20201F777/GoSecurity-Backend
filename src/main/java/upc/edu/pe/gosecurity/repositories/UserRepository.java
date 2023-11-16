@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import upc.edu.pe.gosecurity.entities.Role;
 import upc.edu.pe.gosecurity.entities.Users;
 
 
@@ -21,7 +22,8 @@ public interface UserRepository extends JpaRepository<Users, Long> {
 	//INSERTAR ROLES
 	@Transactional
 	@Modifying
-	@Query(value = "insert into roles (rol, user_id) VALUES (:rol, :user_id)", nativeQuery = true)
-	public void insRol(@Param("rol") String authority, @Param("user_id") Long user_id);
-
+	@Query(value = "UPDATE Users u SET u.role = :role WHERE u.id = :userId")
+	public void insRol(@Param("role") Role role, @Param("userId") Long userId);
+	@Query(value = "SELECT * FROM Users ORDER BY id DESC LIMIT 1", nativeQuery = true)
+	public Users findLastUser();
 }

@@ -2,7 +2,6 @@ package upc.edu.pe.gosecurity.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -17,9 +16,9 @@ public class Users implements Serializable {
 	@Column(length = 200)
 	private String password;
 	private Boolean enabled;
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private List<Role> roles;
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "idRole")
+	private Role role;
 
 	public Long getId() {
 		return id;
@@ -53,12 +52,11 @@ public class Users implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public List<Role> getRoles() {
-		return roles;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setRole(Role role) {
+		this.role = role;
 	}
-
 }

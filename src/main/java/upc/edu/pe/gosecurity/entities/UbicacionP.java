@@ -22,7 +22,6 @@ public class UbicacionP {
     @JoinColumn(name = "idEstadoUbicacion")
     private EstadoUbicacion idEstadoUbicacion;
 
-
     public UbicacionP() {
     }
 

@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import upc.edu.pe.gosecurity.entities.Role;
 import upc.edu.pe.gosecurity.entities.Users;
 import upc.edu.pe.gosecurity.repositories.UserRepository;
 
@@ -41,11 +42,13 @@ public class JwtUserDetailsService implements UserDetailsService {
         }
 
         List<GrantedAuthority> roles = new ArrayList<>();
+        Role role = user.getRole();
 
-        user.getRoles().forEach(rol -> {
+        /*user.getRoles().forEach(rol -> {
             roles.add(new SimpleGrantedAuthority(rol.getRol()));
-        });
+        });*/
 
+        roles.add(new SimpleGrantedAuthority(role.getRol()));
         UserDetails ud = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.getEnabled(), true, true, true, roles);
 
         return ud;

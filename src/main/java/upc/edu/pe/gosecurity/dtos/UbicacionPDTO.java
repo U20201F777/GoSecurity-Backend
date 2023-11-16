@@ -15,7 +15,7 @@ public class UbicacionPDTO {
 
     private LocalDate fecha;
 
-    private EstadoUbicacion estadoUbicacion;
+    private EstadoUbicacion idEstadoUbicacion;
 
     public int getIdUbicacion() {
         return idUbicacionP;
@@ -57,11 +57,11 @@ public class UbicacionPDTO {
         this.fecha = fecha;
     }
 
-    public EstadoUbicacion getEstadoUbicacion() {
-        return estadoUbicacion;
+    public EstadoUbicacion getIdEstadoUbicacion() {
+        return idEstadoUbicacion;
     }
 
-    public void setEstadoUbicacion(EstadoUbicacion estadoUbicacion) {
-        this.estadoUbicacion = estadoUbicacion;
+    public void setIdEstadoUbicacion(EstadoUbicacion idEstadoUbicacion) {
+        this.idEstadoUbicacion = idEstadoUbicacion;
     }
 }
