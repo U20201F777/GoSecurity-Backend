@@ -19,7 +19,7 @@ public class CiudadanoController {
     @Autowired
     private ICiudadanoService cS;
     @PostMapping
-    public void registrar(@RequestBody Ciudadano dto){
+    public void registrar(@RequestBody CiudadanoDTO dto){
         ModelMapper m= new ModelMapper();
         Ciudadano c=m.map(dto, Ciudadano.class);
         cS.insert(c);
