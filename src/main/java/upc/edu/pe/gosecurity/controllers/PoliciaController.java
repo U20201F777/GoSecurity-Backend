@@ -22,7 +22,7 @@ public class PoliciaController {
     private IPoliciaService pS;
 
     @PostMapping
-    public void registrar(@RequestBody PoliciaDTO dto) {
+    public void registrar(@RequestBody Policia dto) {
         ModelMapper m = new ModelMapper();
         Policia p = m.map(dto, Policia.class);
         pS.insert(p);
