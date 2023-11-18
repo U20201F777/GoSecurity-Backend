@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class NotixCiudadanoDTO {
     private String dniCiudadano;
-    private String nombrePertenencia;
     private int cantAtendido;
     private int cantNoAtendido;
 
@@ -14,14 +13,6 @@ public class NotixCiudadanoDTO {
 
     public void setDniCiudadano(String dniCiudadano) {
         this.dniCiudadano = dniCiudadano;
-    }
-
-    public String getNombrePertenencia() {
-        return nombrePertenencia;
-    }
-
-    public void setNombrePertenencia(String nombrePertenencia) {
-        this.nombrePertenencia = nombrePertenencia;
     }
 
     public int getCantNoAtendido() {

@@ -23,7 +23,6 @@ public class CiudadanoController {
         ModelMapper m= new ModelMapper();
         Ciudadano c=m.map(dto, Ciudadano.class);
         cS.insert(c);
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEO");
     }
     @PostMapping("/insert")
     public void insertNew(@RequestBody CiudadanoDTO dto){

@@ -71,9 +71,8 @@ public class PoliciaController {
         for (String[] data:lista){
             NotixCiudadanoDTO dto= new NotixCiudadanoDTO();
             dto.setDniCiudadano(data[0]);
-            dto.setNombrePertenencia(data[1]);
-            dto.setCantAtendido(Integer.parseInt(data[2]));
-            dto.setCantNoAtendido(Integer.parseInt(data[3]));
+            dto.setCantAtendido(Integer.parseInt(data[1]));
+            dto.setCantNoAtendido(Integer.parseInt(data[2]));
             listaDTO.add(dto);
         }
         return listaDTO;
