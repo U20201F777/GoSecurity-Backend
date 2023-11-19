@@ -5,6 +5,7 @@ import upc.edu.pe.gosecurity.entities.Users;
 public class CiudadanoDTO {
     private int idCiudadano;
     private String numeroCiudadano;
+    private Users users;
 
     public int getIdCiudadano() {
         return idCiudadano;
@@ -20,5 +21,13 @@ public class CiudadanoDTO {
 
     public void setNumeroCiudadano(String numeroCiudadano) {
         this.numeroCiudadano = numeroCiudadano;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }
